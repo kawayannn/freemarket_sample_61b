@@ -84,8 +84,10 @@
 |Column|Type|Options|
 |------|----|-------|
 |size|string|null: false|
+|category_id|references|null: false, foreign_key: true|
 
 ### Association
+- belongs_to :category
 - has_many :items
 
 ## imagesテーブル
