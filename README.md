@@ -23,7 +23,7 @@
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|zip_code|string|null: false, unique: true|
+|zip_code|integer|null: false, unique: true|
 |prefecture_id|references|null: false, foreign_key: true|
 |city|string|null: false|
 |street_name|string|null: false, unique: true|
