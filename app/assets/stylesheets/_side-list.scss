@@ -1,0 +1,26 @@
+.side-list{
+
+  float: left;
+  &__title{
+    font-weight: bold;
+    background-color: rgb(245, 245, 245);
+    padding-top: 40px;
+  }
+}
+
+.list-links{
+  &__link{
+    > a{
+    border: 0;
+    padding: 16px;
+    border-top: 1px solid rgb(245, 245, 245);
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    background-color: white;
+    width: 280px;
+    display: inline-block;
+    }
+  }
+
+}
