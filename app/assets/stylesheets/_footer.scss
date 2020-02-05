@@ -1,0 +1,87 @@
+.footer-wrapper{
+  height: 260px;
+  background-image: url("footer-image");
+}
+
+.footer-image{
+  display: flex;
+  width: 750px;
+  margin: 0 auto;
+  &__title{
+    color: white;
+    > h3{
+      margin: 50px 0 5px ;
+      font-weight: bold;
+      font-size: 24px;
+    }
+    > h1{
+      font-size: 35px;
+    }
+  }
+  &__links{
+    &-mercari{
+      height: 68px;
+      width: 68px;
+      margin: 10px 0 10px 0;
+    }
+    &-ag{
+      vertical-align: 22px;
+      height: 40px;
+      width: 144px;
+      margin-left: 10px;
+    }
+    &-ag:hover{
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+  &__ifon{
+    height: 260px;
+    width: 300px;
+  }
+}
+
+footer {
+  height: 389px;
+  width: 100%;
+  background-color: #222222;
+}
+
+.footer-contents{
+  display: flex;
+  width: 1020px;
+  margin: 0 auto;
+  &__block{
+    padding-right: 40px;
+    margin-top: 15px;
+    > ul{
+      > p{
+        height: 20px;
+        color: white;
+        font-weight: bold;
+      }
+      > li{
+        font-size: 12px;
+        padding-top: 16px;
+        color: silver;
+      }
+      > i{
+        color: white;
+        margin: 20px 20px 0 0;
+      }
+    }
+  }
+}
+
+.footer-end{
+  color: white;
+  text-align: center;
+  margin: 30px 190px 0px;
+  > img{
+    height: 31px;
+    float: left;
+  }
+  > span{
+    font-size: 12px;
+  }
+}
