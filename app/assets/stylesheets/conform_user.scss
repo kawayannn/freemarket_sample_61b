@@ -15,15 +15,6 @@
           line-height: 1.5;
           font-size: 14px;
         }
-        .link{
-          margin: 8px 0 0;
-          line-height: 1.5;
-          text-align: right;
-          a{
-            color: #0099e8;
-            text-decoration: none;
-          }
-        }
         .form-group{
           margin: 40px 0 0;
           .input-default{
@@ -45,6 +36,16 @@
         }
       }
     }
+  }
+}
+
+.text-right{
+  margin: 8px 0 0;
+  line-height: 1.5;
+  text-align: right;
+  a{
+    color: #0099e8;
+    text-decoration: none;
   }
 }
 
