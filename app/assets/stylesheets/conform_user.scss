@@ -24,7 +24,50 @@
             text-decoration: none;
           }
         }
+        .form-group{
+          margin: 40px 0 0;
+          .input-default{
+            width: 100%;
+            margin: 8px 0 0;
+          }
+          .select-default{
+            width: 100%;
+          }
+          .form-arbitrary{
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;        
+          }
+        }
       }
     }
   }
+}
+
+.input-default{
+  height: 35px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.select-default{
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.form-arbitrary{
+  background: #ccc;
 }
