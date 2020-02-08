@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe HomesController, type: :controller do
+describe HomeController, type: :controller do
   let(:user) { create(:user) }
   let(:address){ create(:address)}
   # userをcreateし、let内に格納
