@@ -21,25 +21,20 @@
     width: 280px;
     display: inline-block;
     position: relative;
-      > p{
-        > i{
-          position: absolute;
-          top: 18px;
-          right: 16px;
-          font-size: large;
-          color: #ccc;
-          transition: all .3s;
-        }
+      > i{
+        position: absolute;
+        right: 16px;
+        font-size: large;
+        color: #ccc;
+        transition: all .3s;
       }
     }
     > a:hover{
       background-color: #eeeeee;
-      > P{
-        >i {
-          color: black;
-          right: 13px;
-          transition: all .3s;
-        }
+      >i {
+        color: black;
+        right: 13px;
+        transition: all .3s;
       }
     }
   }
