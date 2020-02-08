@@ -15,5 +15,13 @@
     display: table-cell;
     vertical-align: middle;
     width: 320px;
+    transition: all .3s;
+  }
+  > a:hover{
+    background-color: red;
+    transition: all .3s;
+  }
+  > a:click{
+
   }
 }
