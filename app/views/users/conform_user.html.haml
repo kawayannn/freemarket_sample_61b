@@ -3,7 +3,6 @@
     .single-inner__conform_user
       %h2.single-inner__conform_user--head
         本人情報の登録
-        = fa_icon 'angle-right'
       
       .single-inner__conform_user--form
         %form
@@ -14,6 +13,7 @@
           %p.text-right
             = link_to "#" do
               本人確認書類のアップロードについて
+              = icon('fas', 'angle-right')
           .form-group
             %label
               お名前
@@ -68,4 +68,4 @@
             %p
               = link_to "#" do
                 本人情報の登録について
-                = fa_icon 'angle-right'
+                = icon('fas', 'angle-right')
