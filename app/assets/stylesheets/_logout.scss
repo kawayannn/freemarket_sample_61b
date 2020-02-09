@@ -1,0 +1,27 @@
+.logout{
+  padding :64px;
+  display: table;
+  margin: 0 auto;
+  > a{
+    text-decoration: none;
+    color: white;
+    color: white;
+    background-color: #ea352d;
+    height: 50px;
+    margin: 0 auto;
+    font-size: 14px;
+    text-align: center;
+    padding-top: auto;
+    display: table-cell;
+    vertical-align: middle;
+    width: 320px;
+    transition: all .3s;
+  }
+  > a:hover{
+    background-color: red;
+    transition: all .3s;
+  }
+  > a:click{
+
+  }
+}
