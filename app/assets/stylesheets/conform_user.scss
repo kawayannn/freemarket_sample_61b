@@ -1,0 +1,90 @@
+.single-inner{
+  &__conform_user{
+    &--head{
+      border-bottom: 1px solid #f5f5f5;
+      text-align: center;
+      font-size: 24px;
+      padding: 8px 24px;
+      font-weight: bold;
+    }
+    &{
+      form{
+        padding: 64px;
+        .text{
+          margin: 8px 0 0;
+          line-height: 1.5;
+          font-size: 14px;
+        }
+        .form-group{
+          margin: 40px 0 0;
+          .input-default{
+            width: 100%;
+            margin: 8px 0 0;
+            box-sizing: border-box;
+          }
+          .select-default{
+            width: 100%;
+          }
+          .form-arbitrary{
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;        
+          }
+        }
+      }
+    }
+  }
+}
+
+.text-right{
+  margin: 8px 0 0;
+  line-height: 1.5;
+  text-align: right;
+  a{
+    color: #0099e8;
+    text-decoration: none;
+  }
+}
+
+.input-default{
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.select-default{
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.form-arbitrary{
+  background: #ccc;
+}
+.btn-red{
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  margin: 40px 0 0;
+}
+.btn-default{
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: center;
+}
