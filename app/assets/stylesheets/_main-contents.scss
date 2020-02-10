@@ -1,10 +1,12 @@
 .main-contents{
-  height: 100vh;
-  background-color: gray;
+  height: 1500px;
+  background-color: rgb(245, 245, 245);
+  padding: 40px 210px 0;
 }
 
 .single-inner{
   width: 700px;
   background-color: white;
   min-height: 10px;
+  float: right;
 }
