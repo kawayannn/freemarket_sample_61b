@@ -18,18 +18,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
-    @address = @user.build_address
-    render :new_address
+    @phone = @user.build_phone
+    render :new_phone
   end
 
-  def create_address
+  def create_phone
     @user = User.new(session["devise.regist_data"]["user"])
-    @address = Address.new(address_params)
-    unless @address.valid?
-      flash.now[:alert] = @address.errors.full_messages
-      render :new_address and return
+    @phone = Phone.new(phone_params)
+    unless @phone.valid?
+      flash.now[:alert] = @phone.errors.full_messages
+      render :new_phone and return
     end
-    @user.build_address(@address.attributes)
+    @user.build_phone(@phone.attributes)
     binding.pry
     @user.save
     sign_in(:user, @user)
@@ -66,8 +66,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
   end
 
-  def address_params
-    params.require(:address).permit(:phonenumber)
+  def phone_params
+    params.require(:phone).permit(:phonenumber)
   end
 
   # If you have extra params to permit, append them to the sanitizer.

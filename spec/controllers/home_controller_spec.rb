@@ -11,17 +11,29 @@ describe HomeController, type: :controller do
         login user
         get :index, params: { user_id: user.id }
       end
-# この中にログインしている場合のテストを記述
+      it 'assigns @message' do
+        expect(assigns(:message)).to be_a_new(Message)
+      end
+
+      it 'assigns @group' do
+        expect(assigns(:group)).to eq group
+      end
+
       it 'renders index' do
         expect(response).to render_template :index
       end
     end
-
-    context 'not log in' do
-# この中にログインしていない場合のテストを記述
-      it 'redirects to new_user_session_path' do
-        expect(response).to redirect_to(new_user_session_path)
+      it 'ログイン中' do
+        expect(response).to render_template :index
       end
     end
   end
+    context 'not log in' do
+      before do
+        get :index, params: { user_id: user.id }
+      end
+      it 'ログアウト中' do
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
 end
