@@ -36,3 +36,20 @@
     }
   }
 }
+
+.mypage-body{
+  height: 362px;
+  padding: 40px 16px;
+  > textarea{
+    width: 668px;
+    height: 216px;
+    border-color: #cccccc;
+    outline: none;
+    border-width: 1px;
+    border-style: solid;
+    padding: 10px 16px 8px;
+  }
+  > textarea:focus {
+    border: 1px solid rgb(0, 149, 238);
+  }
+}
