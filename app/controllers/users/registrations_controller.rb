@@ -18,8 +18,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
-    @address = @user.build_address
-    render :new_address
+    @phone = @user.build_phone
+    render :new_phone
+  end
+
+  def create_phone
+    @user = User.new(session["devise.regist_data"]["user"])
+    @phone = Phone.new(phone_params)
+    unless @phone.valid?
+      flash.now[:alert] = @phone.errors.full_messages
+      render :new_phone and return
+    end
+    @user.build_phone(@phone.attributes)
+    @user.save
+    sign_in(:user, @user)
   end
 
   # GET /resource/edit
@@ -51,6 +63,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  end
+
+  def phone_params
+    params.require(:phone).permit(:phonenumber)
   end
 
   # If you have extra params to permit, append them to the sanitizer.
