@@ -53,3 +53,26 @@
     border: 1px solid rgb(0, 149, 238);
   }
 }
+
+.change{
+  display: table;
+  margin: 16px auto 0;
+  > a{
+    text-decoration: none;
+    color: white;
+    background-color: #ea352d;
+    height: 50px;
+    font-size: 14px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    width: 668px;
+    transition: all .3s;
+  }
+  > a:hover{
+    background-color: red;
+    transition: all .3s;
+  }
+  > a:click{
+  }
+}
