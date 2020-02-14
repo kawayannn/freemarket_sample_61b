@@ -1,0 +1,38 @@
+.mypage-title{
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px 24px;
+}
+
+.mypage-header{
+  width: 100%;
+  &__image{
+    background-image: url("user-bg.jpg");
+    width: 700px;
+    height: 156px;
+    padding: 72px 16px 24px;
+    &-contents{
+      text-align: center;
+      > img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        vertical-align: middle;
+      }
+      > input{
+        height: 48px;
+        width: 220px;
+        border-color: #cccccc;
+        border-radius: 4px;
+        outline: none;
+        border-width: 1px;
+        border-style: solid;
+        padding: 10px 16px 8px;
+      }
+      > input:focus {
+        border: 1px solid rgb(0, 149, 238);
+      }
+    }
+  }
+}
