@@ -1,0 +1,71 @@
+.main-contents
+  .single-inner
+    .single-inner__conform_user
+      %h2.single-inner__conform_user--head
+        本人情報の登録
+      
+      .single-inner__conform_user--form
+        %form
+          %p.text
+            お客さまの本人情報をご登録ください。
+            %br
+              登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          %p.text-right
+            = link_to "#" do
+              本人確認書類のアップロードについて
+              = icon('fas', 'angle-right')
+          .form-group
+            %label
+              お名前
+            %p
+              川田 晟矢
+          .form-group
+            %label
+              お名前カナ
+            %p
+              カワタ セイヤ
+          .form-group
+            %label
+              生年月日
+            %p
+              1993/12/19 
+          .form-group
+            %label(for="zip_code")
+              郵便番号
+            %span.form-arbitrary
+              任意
+            %input{name: "zip_code", type: "text", placeholder: "例）　1234567", class: "input-default"}
+          .form-group
+            %label(for="prefecture_id")
+              都道府県
+            %span.form-arbitrary
+              任意
+            %select.select-default(name="prefecture_id")
+              %option.selected(value="")  --
+              %option(value="1")  大阪
+              %option(value="2")  東京
+          .form-group
+            %label(for="city")
+              市区町村
+            %span.form-arbitrary
+              任意
+            %input{name: "zip_code", type: "text", placeholder: "例）　大阪市中央区", class: "input-default"}
+          .form-group
+            %label(for="street-name")
+              番地
+            %span.form-arbitrary
+              任意
+            %input{name: "zip_code", type: "text", placeholder: "例）　青山1-1-1", class: "input-default"}
+          .form-group
+            %label(for="building-name")
+              建物名
+            %span.form-arbitrary
+              任意
+            %input{name: "zip_code", type: "text", placeholder: "例）　柳ビル103", class: "input-default"}
+          %button.btn-default.btn-red
+            登録する
+          .form-group.text-right
+            %p
+              = link_to "#" do
+                本人情報の登録について
+                = icon('fas', 'angle-right')

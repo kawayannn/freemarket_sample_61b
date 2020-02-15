@@ -1,0 +1,14 @@
+.main-contents
+  = render "shared/side-list"
+  .single-inner
+    %h3.mypage-title プロフィール
+    .mypage-header
+      .mypage-header__image
+        .mypage-header__image-contents
+          = image_tag "apple.png"
+          %input
+      .mypage-body
+        %textarea
+        .change
+          = link_to "" do
+            変更する

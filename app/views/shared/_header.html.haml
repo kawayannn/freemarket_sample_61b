@@ -1,0 +1,89 @@
+%header
+  .contents
+    .contents__top
+      .contents__top-logo
+        = link_to "" do
+          = image_tag "logo.png"
+      %form
+        %input{:name => "NAME", :placeholder => "何かお探しですか？", :type => "text"}/
+        %i.fa.fa-search
+    .contents__bottom
+      .contents__bottom-links
+        %ul.dropdown
+          %li.dropdown__hover
+            %i.fa.fa-list
+            %p カテゴリーから探す
+            %ul.dropdown__hover-ul
+              %li.dropdown__category
+                レディース
+                %ul.dropdown__category-ul
+                  %li.doropdown__items
+                    トップス
+                    %ul.dropdown__items-ul
+                      %li.doropdown__items-ul-li Tシャツ/カットソー（半袖/袖なし）
+                      %li Tシャツ/カットソー（七分/長袖）
+                      %li
+                      %li
+                      %li
+                      %li
+                      %li
+                      %li
+                      %li
+                      %li
+                      %li
+                      %li
+                  %li ジャケット/アウター
+                  %li パンツ
+                  %li スカート
+                  %li ワンピース
+                  %li 靴
+                  %li ルームウェア
+                  %li 帽子
+                  %li バッグ
+                  %li アクセサリー
+                  %li ヘアアクセサリー
+                  %li 小物
+                  %li 時計
+              %li メンズ
+              %li ベビー・キッズ
+              %li インテリア・住まい・小物
+              %li 本・音楽・ゲーム
+              %li おもちゃ・ホビー・グッズ
+              %li コスメ・香水・美容
+              %li 家電・スマホ・カメラ
+              %li スポーツ・レジャー
+              %li ハンドメイド
+              %li チケット
+              %li 自動車・オートバイ
+              %li その他
+              %li カテゴリ一覧
+        %ul.dropdown
+          %li.dropdown__hover
+            %i.fa.fa-tag
+            %p ブランドから探す
+            %ul.dropdown__hover-ul
+              %li シャネル
+              %li ナイキ
+              %li ルイヴィトン
+              %li シュプリーム
+              %li アディダス
+              %li ブランド一覧
+      .contents__bottom-signs
+        - if user_signed_in?
+          = link_to "", class:"contents__bottom-signs-up" do
+            新規会委員登録
+          = link_to "", class:"contents__bottom-signs-in" do
+            ログイン
+        - else
+          = link_to "", class:"contents__bottom-signs-ok" do
+            %i.far.fa-heart
+            %span いいね一覧
+          = link_to "", class:"contents__bottom-signs-ok" do
+            %i.far.fa-bell
+            %span お知らせ
+          = link_to "", class:"contents__bottom-signs-ok" do
+            %i.fa.fa-check
+            %span やることリスト
+          = link_to "", class:"contents__bottom-signs-ok" do
+            = image_tag "apple.png"
+            %span マイページ

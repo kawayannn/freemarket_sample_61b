@@ -1,0 +1,161 @@
+.main-contents
+  = render "shared/side-list"
+  .single-inner
+    .contents-header
+      .contents-header__image
+        = link_to do
+          = image_tag "apple.png"
+          %p testuser
+          %span
+            評価
+            %span 100
+          %span
+            出品数
+            %span 55
+      .tabs
+        %input#all{:checked => "checked", :name => "tab_item", :type => "radio"}/
+        %label.tab_item{:for => "all"} お知らせ
+        %input#programming{:name => "tab_item", :type => "radio"}/
+        %label.tab_item{:for => "programming"} やることリスト
+        #all_content.tab_content
+          .tab_content_description
+            %ul.tabs-contents
+              %li.tabs-contents__link
+                = link_to "" do
+                  =image_tag "user-bg.jpg"
+                  %span testtttttttttttttttttttttttttttttttttttttttt
+                  %p 
+                    %i.far.fa-clock
+                    14分前
+                  %i.fa.fa-chevron-right
+              %li.tabs-contents__link
+                = link_to "" do
+                  =image_tag "user-bg.jpg"
+                  %span testtttttttttttttttttttttttttttttttttttttttt
+                  %p 
+                    %i.far.fa-clock
+                    14分前
+                  %i.fa.fa-chevron-right
+                  %i.fa.fa-chevron-right
+              %li.tabs-contents__link
+                = link_to "" do
+                  =image_tag "user-bg.jpg"
+                  %span testtttttttttttttttttttttttttttttttttttttttt
+                  %p 
+                    %i.far.fa-clock
+                    14分前
+                  %i.fa.fa-chevron-right
+                  %i.fa.fa-chevron-right
+              %li.tabs-contents__link
+                = link_to "" do
+                  =image_tag "user-bg.jpg"
+                  %span testtttttttttttttttttttttttttttttttttttttttt
+                  %p 
+                    %i.far.fa-clock
+                    14分前
+                  %i.fa.fa-chevron-right
+                  %i.fa.fa-chevron-right
+              %li.tabs-contents__link
+                = link_to "" do
+                  =image_tag "user-bg.jpg"
+                  %span testtttttttttttttttttttttttttttttttttttttttt
+                  %p 
+                    %i.far.fa-clock
+                    14分前
+                  %i.fa.fa-chevron-right
+          .contents-bottom
+            .look-index
+              = link_to "" do
+                一覧を見る
+        #programming_content.tab_content
+          .tab_content_description
+            %ul.tabs-contents
+              %li.tabs-contents__link
+                = link_to "" do
+                  =image_tag "user-bg.jpg"
+                  %span testtttttttttttttttttttttttttttttttttttttttt
+                  %p 
+                    %i.far.fa-clock
+                    14分前
+                  %i.fa.fa-chevron-right
+              %li.tabs-contents__link
+                = link_to "" do
+                  =image_tag "user-bg.jpg"
+                  %span testtttttttttttttttttttttttttttttttttttttttt
+                  %p 
+                    %i.far.fa-clock
+                    14分前
+                  %i.fa.fa-chevron-right
+                  %i.fa.fa-chevron-right
+              %li.tabs-contents__link
+                = link_to "" do
+                  =image_tag "user-bg.jpg"
+                  %span testtttttttttttttttttttttttttttttttttttttttt
+                  %p 
+                    %i.far.fa-clock
+                    14分前
+                  %i.fa.fa-chevron-right
+                  %i.fa.fa-chevron-right
+              %li.tabs-contents__link
+                = link_to "" do
+                  =image_tag "user-bg.jpg"
+                  %span testtttttttttttttttttttttttttttttttttttttttt
+                  %p 
+                    %i.far.fa-clock
+                    14分前
+                  %i.fa.fa-chevron-right
+                  %i.fa.fa-chevron-right
+          .contents-bottom
+            .look-index
+              = link_to "" do
+                一覧を見る
+  .single-inner2
+    .contents2
+      %h2 購入した商品
+      .tabs2
+        %input#all2{:checked => "checked", :name => "tab_item2", :type => "radio"}/
+        %label.tab_item2{:for => "all2"} 取引中
+        %input#programming2{:name => "tab_item2", :type => "radio"}/
+        %label.tab_item2{:for => "programming2"} 取引完了
+        #all_content2.tab_content2
+          .tab_content_description2
+            %ul.tabs-contents
+              %li.tabs-contents__link
+                = link_to "" do
+                  =image_tag "user-bg.jpg"
+                  %span 11111111111111111111111111111111111111111111
+                  .contents2-text 
+                    %p 取引中
+                  %i.fa.fa-chevron-right
+              %li.tabs-contents__link
+                = link_to "" do
+                  =image_tag "user-bg.jpg"
+                  %span 11111111111111111111111111111111111111111111
+                  .contents2-text 
+                    %p 取引中
+                  %i.fa.fa-chevron-right
+          .contents-bottom
+            .look-index
+              = link_to "" do
+                一覧を見る
+        #programming_content2.tab_content2
+          .tab_content_description2
+            %ul.tabs-contents
+              %li.tabs-contents__link
+                = link_to "" do
+                  =image_tag "user-bg.jpg"
+                  %span 11111111111111111111111111111111111111111111
+                  .contents2-text 
+                    %p 取引完了
+                  %i.fa.fa-chevron-right
+              %li.tabs-contents__link
+                = link_to "" do
+                  =image_tag "user-bg.jpg"
+                  %span 11111111111111111111111111111111111111111111
+                  .contents2-text 
+                    %p 取引完了
+                  %i.fa.fa-chevron-right
+          .contents-bottom
+            .look-index
+              = link_to "" do
+                一覧を見る
