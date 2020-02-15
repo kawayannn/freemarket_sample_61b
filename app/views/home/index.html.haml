@@ -6,3 +6,71 @@
   %h2 ログインしていません
   = link_to "新規登録", new_user_registration_path
   = link_to "ログイン", new_user_session_path
+-# = render "shared/slider"
+.favorite-category
+  %h2 人気のカテゴリー
+  .favorite-category__list
+    %ul
+      %li レディース
+      %li メンズ
+      %li 家電・スマホ・カメラ
+      %li おもちゃ・ホビー・グッズ
+.main
+  .prodacuts
+    .prodacuts__category
+      %h2 新着アイテム
+      = link_to "" do
+        もっと見る
+        %i.fa.fa-chevron-right
+    .prodacuts__cards
+      %ul.prodacuts__cards-block
+        %li.prodacuts__cards-item
+          = link_to "", class: "prodacuts__cards-link" do
+            .prodacuts__cards-content
+              = image_tag "image.jpg"
+              %p testitemttttttttttttttttttttt
+        %li.prodacuts__cards-item
+          = link_to "", class: "prodacuts__cards-link" do
+            .prodacuts__cards-content
+              = image_tag "image.jpg"
+              %p testitemttttttttttttttttttttt
+        %li.prodacuts__cards-item
+          = link_to "", class: "prodacuts__cards-link" do
+            .prodacuts__cards-content
+              = image_tag "image.jpg"
+              %p testitemttttttttttttttttttttt
+        %li.prodacuts__cards-item
+          = link_to "", class: "prodacuts__cards-link" do
+            .prodacuts__cards-content
+              = image_tag "image.jpg"
+              %p testitemttttttttttttttttttttt
+        %li.prodacuts__cards-item
+          = link_to "", class: "prodacuts__cards-link" do
+            .prodacuts__cards-content
+              = image_tag "image.jpg"
+              %p testitemttttttttttttttttttttt
+        %li.prodacuts__cards-item
+          = link_to "", class: "prodacuts__cards-link" do
+            .prodacuts__cards-content
+              = image_tag "image.jpg"
+              %p testitemttttttttttttttttttttt
+        %li.prodacuts__cards-item
+          = link_to "", class: "prodacuts__cards-link" do
+            .prodacuts__cards-content
+              = image_tag "image.jpg"
+              %p testitemttttttttttttttttttttt
+        %li.prodacuts__cards-item
+          = link_to "", class: "prodacuts__cards-link" do
+            .prodacuts__cards-content
+              = image_tag "image.jpg"
+              %p testitemttttttttttttttttttttt
+        %li.prodacuts__cards-item
+          = link_to "", class: "prodacuts__cards-link" do
+            .prodacuts__cards-content
+              = image_tag "image.jpg"
+              %p testitemttttttttttttttttttttt
+        %li.prodacuts__cards-item
+          = link_to "", class: "prodacuts__cards-link" do
+            .prodacuts__cards-content
+              = image_tag "image.jpg"
+              %p testitemttttttttttttttttttttt
