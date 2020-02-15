@@ -3,6 +3,34 @@
   &__image{
     background-image: url("user-bg.jpg");
     height: 200px;
+    text-align: center;
+    padding-top: 50px;
+    > a{
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+      display: block;
+      top: 50%;
+      > img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+      > p{
+        font-weight: bold;
+      }
+      > span{
+        > span{
+          font-weight: bold;
+        }
+      }
+    }
+    > a:hover{
+      opacity: 0.75;
+      > p{
+        text-decoration: underline;
+      }
+    }
   }
 }
 

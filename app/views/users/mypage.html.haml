@@ -3,6 +3,15 @@
   .single-inner
     .contents-header
       .contents-header__image
+        = link_to do
+          = image_tag "apple.png"
+          %p testuser
+          %span
+            評価
+            %span 100
+          %span
+            出品数
+            %span 55
       .tabs
         %input#all{:checked => "checked", :name => "tab_item", :type => "radio"}/
         %label.tab_item{:for => "all"} お知らせ
