@@ -105,9 +105,9 @@
       %h2 購入した商品
       .tabs2
         %input#all2{:checked => "checked", :name => "tab_item2", :type => "radio"}/
-        %label.tab_item2{:for => "all2"} お知らせ
+        %label.tab_item2{:for => "all2"} 取引中
         %input#programming2{:name => "tab_item2", :type => "radio"}/
-        %label.tab_item2{:for => "programming2"} やることリスト
+        %label.tab_item2{:for => "programming2"} 取引完了
         #all_content2.tab_content2
           .tab_content_description2
             %ul.tabs-contents
@@ -122,36 +122,8 @@
                 = link_to "" do
                   =image_tag "user-bg.jpg"
                   %span 11111111111111111111111111111111111111111111
-                  %p 
-                    %i.far.fa-clock
-                    14分前
-                  %i.fa.fa-chevron-right
-                  %i.fa.fa-chevron-right
-              %li.tabs-contents__link
-                = link_to "" do
-                  =image_tag "user-bg.jpg"
-                  %span 11111111111111111111111111111111111111111111
-                  %p 
-                    %i.far.fa-clock
-                    14分前
-                  %i.fa.fa-chevron-right
-                  %i.fa.fa-chevron-right
-              %li.tabs-contents__link
-                = link_to "" do
-                  =image_tag "user-bg.jpg"
-                  %span 11111111111111111111111111111111111111111111
-                  %p 
-                    %i.far.fa-clock
-                    14分前
-                  %i.fa.fa-chevron-right
-                  %i.fa.fa-chevron-right
-              %li.tabs-contents__link
-                = link_to "" do
-                  =image_tag "user-bg.jpg"
-                  %span 11111111111111111111111111111111111111111111
-                  %p 
-                    %i.far.fa-clock
-                    14分前
+                  .contents2-text 
+                    %p 取引中
                   %i.fa.fa-chevron-right
           .contents-bottom
             .look-index
@@ -163,19 +135,16 @@
               %li.tabs-contents__link
                 = link_to "" do
                   =image_tag "user-bg.jpg"
-                  %span 22222222222222222222222222222222222222222222
-                  %p 
-                    %i.far.fa-clock
-                    14分前
+                  %span 11111111111111111111111111111111111111111111
+                  .contents2-text 
+                    %p 取引完了
                   %i.fa.fa-chevron-right
               %li.tabs-contents__link
                 = link_to "" do
                   =image_tag "user-bg.jpg"
-                  %span 22222222222222222222222222222222222222222222
-                  %p 
-                    %i.far.fa-clock
-                    14分前
-                  %i.fa.fa-chevron-right
+                  %span 11111111111111111111111111111111111111111111
+                  .contents2-text 
+                    %p 取引完了
                   %i.fa.fa-chevron-right
           .contents-bottom
             .look-index
