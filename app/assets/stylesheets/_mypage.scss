@@ -71,7 +71,7 @@ input[name="tab_item"] {
     width: 100%;
     display: inline-block;
     position: relative;
-    height: 80px;
+    height: auto;
     > img{
       height: 48px;
       width: 48px;
@@ -189,4 +189,18 @@ input[name="tab_item2"] {
 .tabs2 input:checked + .tab_item2 {
   background-color: white;
   border-top: 2px solid red;
+}
+
+.contents2-text{
+    > p{
+    font-weight: bold;
+    padding: 3px;
+    background-color: #888888;
+    font-size: 12px;
+    display: inline-block;
+    margin: 8px 0 0 0;
+    padding: 5px 6px;
+    border-radius: 2px;
+    color: #fff;
+    }
 }
