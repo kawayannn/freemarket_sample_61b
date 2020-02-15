@@ -26,6 +26,7 @@
   text-align: center;
   font-weight: bold;
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 .tab_item:hover {
   opacity: 0.75;
@@ -57,26 +58,13 @@ input[name="tab_item"] {
   border-top: 2px solid red;
 }
 
-.side-list{
-
-  float: left;
-  &__title{
-    font-weight: bold;
-    background-color: rgb(245, 245, 245);
-    padding-top: 40px;
-  }
-}
-
 // お知らせの中身
 .tabs-contents{
   &__link{
-    > img{
-    
-    }
     > a{
     border: 0;
     padding: 16px;
-    border-top: 1px solid rgb(245, 245, 245);
+    border-bottom: 1px solid rgb(245, 245, 245);
     text-decoration: none;
     color: black;
     font-size: 14px;
@@ -85,11 +73,25 @@ input[name="tab_item"] {
     display: inline-block;
     position: relative;
     height: 80px;
+    > img{
+      height: 48px;
+      width: 48px;
+      float: left;
+      margin-right: 20px;
+      }
       > i{
         position: absolute;
         right: 16px;
+        top: 30px;
         font-size: large;
-        transition: all .3s;
+      }
+      > p{
+        color: #888;
+        font-size: 12px;
+        > i{
+          font-size: 16px;
+          vertical-align: middle;
+        }
       }
     }
     > a:hover{
