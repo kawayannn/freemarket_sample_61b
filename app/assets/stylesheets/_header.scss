@@ -134,11 +134,33 @@ header {
     &-links{
       height: 100%;
       float: left;
-      }
+      } 
     &-signs{
       height: 100%;
       float: right;
       font-size: 14px;
+      &-ok{
+        color: #333;
+        text-decoration: none;
+        font-size: 14px;
+        > i{
+          font-size: 19px;
+          color: #ccc;
+          margin:0 5px 0 20px;
+        }
+        > img{
+          height: 32px;
+          width: 32px;
+          border-radius: 50%;
+          vertical-align: middle;
+        }
+      }
+      &-ok:hover{
+        color:rgb(0, 149, 238);
+        > i{
+          color:rgb(0, 149, 238);
+        }
+      }
       &-up{
         padding: 8px 10px;
         background-color: red;
