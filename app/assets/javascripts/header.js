@@ -25,4 +25,15 @@ $(document).on('turbolinks:load', function(){
       $(this).children('ul').hide();
     });
   });
+
+  $(function() {
+    $('.slider').slick({
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 4000,
+      speed: 800,
+      arrows: true,
+    });
+  });
+
 });
