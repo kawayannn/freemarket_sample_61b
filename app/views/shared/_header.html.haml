@@ -70,11 +70,6 @@
               %li ブランド一覧
       .contents__bottom-signs
         - if user_signed_in?
-          = link_to "", class:"contents__bottom-signs-up" do
-            新規会委員登録
-          = link_to "", class:"contents__bottom-signs-in" do
-            ログイン
-        - else
           = link_to "", class:"contents__bottom-signs-ok" do
             %i.far.fa-heart
             %span いいね一覧
@@ -87,3 +82,8 @@
           = link_to "", class:"contents__bottom-signs-ok" do
             = image_tag "apple.png"
             %span マイページ
+        - else
+          = link_to "", class:"contents__bottom-signs-up" do
+            新規会委員登録
+          = link_to "", class:"contents__bottom-signs-in" do
+            ログイン
