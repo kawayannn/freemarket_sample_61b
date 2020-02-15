@@ -136,8 +136,9 @@ header {
       float: left;
       } 
     &-signs{
-      height: 100%;
       float: right;
+      height: 100%;
+      display: flex;
       font-size: 14px;
       &-ok{
         color: #333;
@@ -148,11 +149,15 @@ header {
           color: #ccc;
           margin:0 5px 0 20px;
         }
+        > span{
+          line-height: 32px;
+        }
         > img{
           height: 32px;
           width: 32px;
           border-radius: 50%;
-          vertical-align: middle;
+          float: left;
+          margin: 0 5px 0 20px;
         }
       }
       &-ok:hover{
