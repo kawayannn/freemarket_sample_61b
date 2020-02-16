@@ -28,11 +28,11 @@ $(document).on('turbolinks:load', function(){
 
   $(function() {
     $('.slider').slick({
-      dots: true,
       autoplay: true,
       autoplaySpeed: 4000,
       speed: 800,
-      arrows: true,
+      arrows: false,
+      dots: false,
     });
   });
 
