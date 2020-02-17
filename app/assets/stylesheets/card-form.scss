@@ -18,6 +18,7 @@
         vertical-align: top;
       }
       .card-list{
+        margin:  8px 0 0;
         li{
           display: inline-block;
           margin: 0 0 0 8px;
@@ -47,6 +48,19 @@
             font-size: 12px;
             text-align: center;
           }
+        }
+        .answer{
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 28px;
+          z-index: 1;
+          padding: 16px;
+          border-radius: 6px;
+          background: #eee;
+          color: #333;
+          line-height: 1.5;
+          text-align: center;
         }
       }
     }
