@@ -28,8 +28,9 @@
     margin-left: 200px;
     margin-bottom: 16px;
     font-family: sans-serif;
-   
   }
+  }
+
   .slider__wrapper-first-p2{
      position: absolute;
      top: 170px;
@@ -43,6 +44,7 @@
      line-height: 1.77777;
      font-family: serif;
   }
+
   .slider__wrapper-first-content{
     position: absolute;
     top: 0;
@@ -50,6 +52,7 @@
     width: 31%;
     height: 31%;
   }
+  
   .slider__wrapper-first-content_bannar{
     position: absolute;
     top: 220px;
@@ -70,8 +73,7 @@
     background-color: rgba(255, 255, 255, 0.4);
     text-align: center;
   }
+  .slider__wrapper-first img,.slider__wrapper-second img{
+    width: 100%;
   }
-
-.slider__wrapper-first img,.slider__wrapper-second img{
-  width: 100%;
-}
+  
