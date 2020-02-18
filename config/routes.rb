@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/edit_profile/:user_id' => 'users#edit_profile', as: 'edit_profile'
   get '/mypage/:user_id' => 'users#mypage', as: 'mypage'
 
+  resources :items,                                 only:[:new]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   devise_for :users, controllers: {
