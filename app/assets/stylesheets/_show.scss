@@ -54,3 +54,26 @@
   }
 
 }
+
+.show-item-barance{
+  width: 200px;
+  color: #FFFFFF;
+  background: #05B0B4;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: center;
+  margin: 20px auto 0;
+  position: relative;
+}
+.show-item-barance:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 7.5px 0 7.5px;
+  border-color: #05B0B4 transparent transparent transparent;
+}
