@@ -1,10 +1,53 @@
 !!! 
 %html
  %head
-  %meta{content: "text/html; charset-UTF-8","http-equiv": "Concat-Type"}/
+  %meta{content: "text/html; charset-UTF-8","http-equiv": "Concat-Type"}
  %header
-  .new_head
-   .new_head_top
-    .new_head_top_logo
-     %img{src:"https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"}
+  .new_header
+   .new_header__top
+    .new_header__logo
+     = image_tag src="logo.png", size: "120x33"
  %body
+  .new_body
+   .new_body_exhibition_image
+    %h1 出品画像
+    %p1 最大10枚までアップロードできます
+
+   .new_body_product_name
+    %h1 商品名
+
+   .new_bory_product_description
+    %h1 商品の説明
+
+   .new_bory_product_details
+    %h1 商品の詳細
+    %p1 カテゴリー
+    %p2 ブランド
+    %p3 商品の状態
+
+   .new_body_regarding_delivery
+    %h1 配送について
+    %p1 配送料の負担
+    %p2 発送元の地域
+    %p3 発送までの日数
+
+    .new_body_price
+    %h1 価格（¥300~9,999,999）
+    %p1 販売価格
+    %h2 販売手数料（10%）
+    %h3 販売利益
+
+    .new_body_exhibition_function
+    %h1 出品
+    %h2 もどる
+    %p1 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物物などの販売は犯罪であり、法律いより処罰される可能性があります。また出品をもちまして加盟店医規約い同意したことになります。
+
+
+
+ %footer
+  .new_footer
+   .new_footer_top
+   %p1 プライバシーポリシー
+   %p2 メルカリ利用規約
+   %p3 特定商取引に関する表記
+   
