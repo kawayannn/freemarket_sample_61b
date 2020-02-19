@@ -77,3 +77,30 @@
   border-width: 10px 7.5px 0 7.5px;
   border-color: #05B0B4 transparent transparent transparent;
 }
+
+.go-purchase{
+  display: table;
+  margin-top: 16px;
+  width: 100%;
+  font-weight: 600;
+  > a{
+    line-height: 60px;
+    text-decoration: none;
+    color: white;
+    background-color: #ea352d;
+    margin: 0 auto;
+    font-size: 24px;
+    text-align: center;
+    padding-top: auto;
+    display: table-cell;
+    vertical-align: middle;
+    transition: all .3s;
+  }
+  > a:hover{
+    background-color: red;
+    transition: all .3s;
+  }
+  > a:click{
+
+  }
+}
