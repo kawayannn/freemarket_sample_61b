@@ -1,3 +1,4 @@
+# カテゴリー
 # 一層目
 lady = Category.create(:name=>"レディース")
 men = Category.create(name: "メンズ")
@@ -24,3 +25,15 @@ men_jacket.children.create([{name: "テーラードジャケット"}, {name: "�
 
 toy.children.create([{name: "おふろのおもちゃ"}, {name: "ガラガラ"},{name: "その他"}])
 kid_shoes.children.create([{name: "サンダル"}, {name: "スニーカー"}, {name: "ブーツ"},{name: "その他"}])
+
+
+
+# サイズ
+# サイズグループ
+clothes_size_group = Size.create(name: "洋服のサイズ")
+kid_shoes_size_group = Size.create(name: "ベビー・キッズの靴サイズ")
+
+# サイズ
+clothes_size = clothes_size_group.children.create([{name: "S"},{name: "M"},{name: "L"},{name: "FREE SIZE"}])
+kid_shoes_size = kid_shoes_size_group.children.create([{name: "14cm・14.5cm"},{name: "15cm・15.5cm"},{name: "16cm・16.5cm"},{name: "17cm以上"}])
+
