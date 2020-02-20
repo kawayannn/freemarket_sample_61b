@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_20_085552) do
+ActiveRecord::Schema.define(version: 2020_02_20_095502) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "zip_code", null: false
@@ -29,7 +29,9 @@ ActiveRecord::Schema.define(version: 2020_02_20_085552) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ancestry"
+    t.bigint "size_id"
     t.index ["ancestry"], name: "index_categories_on_ancestry"
+    t.index ["size_id"], name: "index_categories_on_size_id"
   end
 
   create_table "phones", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -70,4 +72,5 @@ ActiveRecord::Schema.define(version: 2020_02_20_085552) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "categories", "sizes"
 end
