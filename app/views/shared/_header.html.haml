@@ -83,7 +83,5 @@
             = image_tag "apple.png"
             %span マイページ
         - else
-          = link_to "", class:"contents__bottom-signs-up" do
-            新規会員登録
-          = link_to "", class:"contents__bottom-signs-in" do
-            ログイン
+          = link_to "新規会員登録", new_user_registration_path, class:"contents__bottom-signs-up"
+          = link_to "ログイン", new_user_session_path, class:"contents__bottom-signs-in"

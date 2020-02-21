@@ -1,3 +1,20 @@
+%body
+  %header.single-header
+    %h1
+      = link_to "/", class:"" do
+        = image_tag 'logo.png'
+    %nav.progress-bar.signup-bar
+      %ol.clearfix
+        %li.active
+          会員情報
+          .progress-status
+        %li
+          電話番号認証
+          .progress-status
+        %li
+          完了
+          .progress-status
+
 %h2 会員情報入力
 = form_for(@user, url: user_registration_path) do |f|
   = render "devise/shared/error_messages", resource: @user
