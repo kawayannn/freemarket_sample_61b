@@ -5,8 +5,13 @@
     %div 
      .new-main__inner
       %h2.new-main__inner 商品の情報を入力
-      = form_with model:@prodact,url:new_path(@product),class:'new-main__form' do |f|
+      = form_with model: @product, url: sell_path(@product), class:'new-main__form' do |f|
        .new-main__upload-box
-       %h3.new-main__upload_head 
-       出品画像
-       %span.new-main__from_require 必須
+        %h3.new-main__upload_head 
+        "出品画像"
+        %span.new-main__from_require 必須
+        %p 最大10枚までアップロードできます。
+        .new-main__dropbox-container.clearfix.state-image-number-10
+        .new-main__upload-item-container
+          .new-main__content
+          .new-main__from-group

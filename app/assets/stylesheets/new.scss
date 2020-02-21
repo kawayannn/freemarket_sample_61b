@@ -1,3 +1,9 @@
 .new_container{
   padding-bottom: 250px;
 }
+
+.new-main{
+  &__container{
+    background-color: #fff;
+  }
+}
