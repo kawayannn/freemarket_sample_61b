@@ -1,3 +1,9 @@
+!!!
+%html{lang:"ja"}
+ %head
+  %meta{charset: "utf-8"}
+   %body
+
 .new_container
  %main.new_main
   %section.new_main__container
@@ -5,7 +11,7 @@
     %div 
      .new-main__inner
       %h2.new-main__inner 商品の情報を入力
-      = form_with model: @product, url: sell_path(@product), class:'new-main__form' do |f|
+    -#   = form_with model: @product, url: sell_path(@product), class:'new-main__form' do |f|
        .new-main__upload-box
         %h3.new-main__upload_head 
         "出品画像"

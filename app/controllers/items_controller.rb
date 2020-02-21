@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+  render layout: false #spplication.haml.erbを適応しない
   end
 
 end
