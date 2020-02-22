@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-  render layout: false #spplication.haml.erbを適応しない
+  render layout: false #application.haml.erbを適応しない
   end
 
 end

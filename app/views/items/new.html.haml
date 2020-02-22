@@ -1,12 +1,12 @@
 !!!
-%html{lang:"ja"}
+%haml{lang:"ja"}
  %head
   %meta{charset: "utf-8"}
    %body
-%header
+%new_header
 .new_header
- %a.new_header__logo
- = image_tag "logo.png",size:"185x49"
+ .new_header__logo
+ = image_tag "logo-acdd90ac4f472d5a6f7a330d33ab1225.svg",size:"189x49"
 .new_container
  %main.new_main
   %section.new_main__container
@@ -16,10 +16,15 @@
       %h2.new-main__inner 商品の情報を入力
       .new-main__upload-box
        %h3.new-main__upload_head 
-        "出品画像"
+        出品画像
         %span.new-main__from_require 必須
         %p 最大10枚までアップロードできます。
         .new-main__dropbox-container.clearfix.state-image-number-10
         .new-main__upload-item-container
          .new-main__content
-          .new-main__from-group
+          %h4.new-main__from-group
+          商品名
+          %span.new-main__form-require 必須
+          %h4.new-main__from-group
+          商品の説明
+          %span.new-main__form-require 必須

@@ -1,16 +1,16 @@
+.new_header{
+  height: 127px;
+  width: 997px;
+  background-color: rgb(51, 51, 51);
+  &_logo{
+  text-align: center;
+  }
+}
+
 .new_container{
   padding-bottom: 250px;
 }
 
-.new_header{
-  height: 127px;
-  width: 997px;
-  background-color: rgb(245, 245, 245);
-  .new_header__logo{
-    height: 49px;
-    width: 185px;
-  }
-}
 
 .new-main{
   &__container{
