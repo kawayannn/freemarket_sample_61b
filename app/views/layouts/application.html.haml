@@ -1,5 +1,5 @@
 !!!
-%html
+%html{lang: "ja"}
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
     %title FreemarketSample61b
@@ -8,6 +8,6 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = render "shared/header"
+    -# = render "shared/header"
     = yield
-    = render "shared/footer"
+    -# = render "shared/footer"
