@@ -59,8 +59,7 @@
          %span.new-main__form-require 必須
          .new-main__right.new-main__price-input
           %li.clearfix
-           .new-main__left
-            販売手数料(10%)
+           .new-main__left 販売手数料(10%)
           %li.clearfix.bold
            .new-main__left 販売利益
            .new-main__right
@@ -73,17 +72,19 @@
 
 
 %footer.new-footer
- %nav
+ %div
   %ul.new-footer__container
    %li 
-    =link_to "" do
+    = link_to "" do
      プライバシーポリシー
    %li 
-    =link_to "" do
+    = link_to "" do
      メルカリ利用規約
    %li 
-    =link_to "" do
+    = link_to "" do
      特定商取引に関する規約
-.new-footer_logo
- =link_to "" do
-  = image_tag "logotype-gray-432385160bc60aa0002854fccdef2caf",size:"65x80"
+  = link_to "" do
+   = image_tag "logotype-gray-432385160bc60aa0002854fccdef2caf", size:"65x80"
+ %p 
+  %samll
+   © Mercari,inc
