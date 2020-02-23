@@ -80,7 +80,7 @@
   %option(value="1")  1~2日で発送
   %option(value="2")  3~4日で発送
   %option(value="3")  5~6日で発送
-  
+
  .new-main__sub_head 
   価格(¥300~9,999,999)
 
@@ -90,9 +90,11 @@
  %input{type:"number",name:"price",placeholder:"0",class:"new-main__selling-price__number"}
  .new-main__selling-price__unit¥
 
- .new-main__from-group
+ .new-main__from-group__fee-value
   販売手数料(10%)
- .new-main__from-group
+  %span.new-main__from-group__fee-label 
+  ー
+ .new-main__from-group__
   販売利益
 
  .new-main__content.new-main__btn-box
@@ -108,7 +110,7 @@
  .new-footer__top__title
   = link_to "" do
    メルカリ利用規約
- .new-footer__top__title 
+ .new-footer__top__title
   = link_to "" do
    特定商取引に関する規約
 
