@@ -12,16 +12,34 @@ body{
   background-color:rgb(255, 255, 255) ;
   max-width: 700px;
   margin: 0px auto;
-  padding: 20px 15px;
+  padding: 30px 40px;
   box-sizing: border-box;
 }
 
 .new-main{
+  // margin: 20px 40px;
+  // padding: 20px 40px;
+  &__upload-box{
+    // padding: 40px;
+    box-sizing: border-box;
+  }
+  &__upload_head  {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4em;
+  }
+  &__upload_sub-head{
+    margin-top: 16px;
+    font-size: 14px;
+    color:rgb(51, 51, 51);
+  }
   &__container{
   width: 700px;
   margin:0px 282px;
   }
   &__form-require {
+   float: left;
+   width: 33px;
    background-color:red;
    color: #fff;
    font-size: 12px;
@@ -32,6 +50,7 @@ body{
    margin-left: 8px;
   }
   &__form-arbitrary{
+    width: 33px;
     background-color: #bfbfbf;
     color: #fff;
     font-size: 12px;
@@ -42,21 +61,13 @@ body{
     margin-left: 8px;
   }
   &__from-group {
+    font-family:sans-serif;
+    display: flex;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 550;
     line-height: 1.4em;
-    margin: 30px 0px;
-    padding: 15px 0px;
-  }
-  &__upload_head  {
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.4em;
-  }
-  &__upload_sub-head{
-    margin-top: 16px;
-    font-size: 12px;
-    color:rgb(51, 51, 51);
+    margin: 0px 0px;
+    padding: 0px 0px;
   }
   &__container{
     background-color: #fff;
@@ -106,12 +117,21 @@ body{
 
 .new-main__input{
   width: 100%;
+  height: 50px;
   font-family:sans-serif;
   &__product--name{
     position: relative;
+    margin-top: 16px;
+    align-items: center;
+    display: inline-flex;
+    box-sizing: border-box;
+    
   }
   &__upload-image{
-    height: 100%;
+    height: 150px;
+    margin-top: 8px;
+    padding: 0px 4px;
+    flex: 1 1 0%;
   }
   &__product--description{
     width: 100%;
@@ -159,8 +179,8 @@ body{
   height: 50px;
   background-color: rgb(245, 245, 245);
    &__top{
+     display: flex;
      &__title{
-    float: left;
     background-color: rgb(245, 245, 245);
     padding-left: 10px;
      } 

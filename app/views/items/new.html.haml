@@ -5,91 +5,82 @@
 
 .new_container
  %main.new_main
-  %section.new_main__container
-   #new-container
-    %div 
-     .new-main__inner
-      %h2.new-main__head
+ .new-main__upload-box
+  .new-main__upload_head
+   .new-main__from-group
+    出品画像
+    .new-main__form-require 必須
+   .new-main__upload_sub-head 最大10枚までアップロードできます。
+   .new-main__input__upload-image
+    %input{type:"file",accept:"image/pnp,image/jpeg",multiple_style:"display:none",placeholder:"ドラッグアンドドロップ", autocomplete:"off",tabindex:"-1",class:"new-main__input__upload-image"}
 
-      .new-main__upload-box
-       %h3.new-main__upload_head 
-        出品画像
-        %span.new-main__form-require 必須
-        %p.new-main__upload_sub-head 最大10枚までアップロードできます。
-        .new-main__input__upload-image
-         %input{type:"file",accept:"image/pnp,image/jpeg",multiple_style:"display:none",placeholder:"ドラッグアンドドロップ", autocomplete:"off",tabindex:"-1",class:"new-main__input__upload-image"}
+ .new-main__upload-item-container
+  .new-main__content
+   .new-main__from-group
+    商品名
+    .new-main__form-require 必須
+   .new-main__input__product--name
+   %input{type: "text" ,name:"name" ,placeholder:"40文字まで", autocomplete:"off",class: "new-main__input"} 
+   .new-main__from-group
+    商品の説明
+    .new-main__form-require 必須
+   .new-main__input__product--description
+   %input{type:"text",name:"desaription",row:"7",placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。",class:"new-main__input__product--description"} 
+   .new-main__input__product--word-count 1/1000
+   .new-main__input__product--promt 入力してください
 
-        .new-main__dropbox-container.clearfix.state-image-number-10
-        .new-main__upload-item-container
-         .new-main__content
+ .new-main__product-details
+  %h3.new-main__sub_head 商品の詳細
 
-          .new-main__from-group
-           商品名
-           %span.new-main__form-require 必須
-          .new-main__input__product--name
-           %input{type: "text" ,name:"name" ,placeholder:"40文字まで", autocomplete:"off",class: "new-main__input"}
-         
-          .new-main__from-group
-           商品の説明
-           %span.new-main__form-require 必須
-           .new-main__input__product--description
-            %input{type:"text",name:"desaription",row:"7",placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。",class:"new-main__input__product--description"} 
-            .new-main__input__product--word-count 1/1000
-            .new-main__input__product--promt 入力してください
+  .new-main__from-group
+   カテゴリー
+   .new-main__form-require 必須
+  .new-main__select__product--categories
+  %select.new-main__select__product--categories(name="prefecture_id")
+  %option.selected(value="")  選択してください
+  %option(value="1")  
+ 
+  .new-main__from-group
+   ブランド
+   .new-main__form-arbitrary 任意
 
-        .new-main__content.clerfix
-         %h3.new-main__sub_head 商品の詳細
-        .new-main__from-group
-         カテゴリー
-         %span.new-main__form-require 必須
-        .new-main__select__product--categories
-         %select.new-main__select__product--categories(name="prefecture_id")
-          %option.selected(value="")  選択してください
-          %option(value="1")  レディース
-          
-        .new-main__brand
-         .new-main__from-group
-          ブランド
-          %span.new-main__form-arbitrary 任意
-         .new-main__from-group
-          商品の状態
-          %span.new-main__form-require 必須
+  .new-main__from-group
+   商品の状態
+   .new-main__form-require 必須
 
-       .new-main__send
-        .new-main__send_head 配送について
-        .new-main__from-group
-         配送料の負担
-         %span.new-main__form-require 必須
-        .new-main__from-group
-         発送元の地域
-         %span.new-main__form-require 必須
-        .new-main__from-group
-         配送料の負担
-         %span.new-main__form-require 必須
-        .new-main__from-group
-         発送までの日数
-         %span.new-main__form-require 必須
+ .new-main__send
+  .new-main__send_head 配送について
+  .new-main__from-group
+   配送料の負担
+   .new-main__form-require 必須
 
-         %h3.new-main__sub_head 価格(¥300~9,999,999)
-    
+  .new-main__from-group
+   発送元の地域
+   .new-main__form-require 必須
 
-        .new-main__form-box
-         .new-main__price
-         .new-main__form-group
-         .clearfix 販売価格
-         %span.new-main__form-require 必須
-         .new-main__right.new-main__price-input
-          .clearfix
-           .new-main__left 販売手数料(10%)
-          .clearfix.bold
-           .new-main__left 販売利益
-           .new-main__right
-        .new-mainw__model-inner
-        .new-main__content.new-main__btn-box
+  .new-main__from-group
+   配送料の負担
+   .new-main__form-require 必須
 
-        .new-main__button-exhibition 出品する
+  .new-main__from-group
+   発送までの日数
+   .new-main__form-require 必須
 
-        .new-main__button-return もどる
+  .new-main__sub_head 
+  価格(¥300~9,999,999)
+
+  .new-main__from-group
+   販売価格
+   .new-main__form-require 必須
+
+  .new-main__from-group
+   販売手数料(10%)
+  .new-main__from-group
+   販売利益
+
+ .new-main__content.new-main__btn-box
+  .new-main__button-exhibition 出品する
+  .new-main__button-return もどる
 
 
 .new-footer
@@ -110,11 +101,4 @@
  %p 
   %samll
    © Mercari,inc
-
-
--# .new-main
--#     .new-main__header
--#         お支払い方法
--#     .new-main__categries
--#         %select#(name="")
     
