@@ -11,42 +11,46 @@
     出品画像
     .new-main__form-require 必須
    .new-main__upload_sub-head 最大10枚までアップロードできます。
-   .new-main__input__upload-image
-    %input{type:"file",accept:"image/pnp,image/jpeg",multiple_style:"display:none",placeholder:"ドラッグアンドドロップ", autocomplete:"off",tabindex:"-1",class:"new-main__input__upload-image"}
+   %input{type:"file",accept:"image/pnp,image/jpeg",multiple_style:"display:none",placeholder:"ドラッグアンドドロップ", autocomplete:"off",tabindex:"-1",class:"new-main__input__upload-image"}
 
  .new-main__upload-item-container
   .new-main__content
    .new-main__from-group
     商品名
     .new-main__form-require 必須
-   .new-main__input__product--name
-   %input{type: "text" ,name:"name" ,placeholder:"40文字まで", autocomplete:"off",class: "new-main__input"} 
+   %input{type: "text" ,name:"name" ,placeholder:"　40文字まで", autocomplete:"off",class: "new-main__input__product--name"} 
    .new-main__from-group
     商品の説明
     .new-main__form-require 必須
-   .new-main__input__product--description
    %input{type:"text",name:"desaription",row:"7",placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。",class:"new-main__input__product--description"} 
    .new-main__input__product--word-count 1/1000
    .new-main__input__product--promt 入力してください
 
  .new-main__product-details
-  %h3.new-main__sub_head 商品の詳細
+  .new-main__sub_head 商品の詳細
 
   .new-main__from-group
    カテゴリー
    .new-main__form-require 必須
-  .new-main__select__product--categories
+
   %select.new-main__select__product--categories(name="prefecture_id")
-  %option.selected(value="")  選択してください
-  %option(value="1")  
+   %option.selected(value="")  選択してください
+   %option(value="1")  メンズ
+   %option(value="1")  レディース
  
   .new-main__from-group
    ブランド
    .new-main__form-arbitrary 任意
+  %input{type:"text",name:"brandname",placeholder:"　例））シャネル",autocomplete:"off",class:"new-main__input__product--name"}
 
   .new-main__from-group
    商品の状態
    .new-main__form-require 必須
+
+  %select.new-main__select__product--categories(name="prefecture_id")
+   %option.selected(value="")  選択してください
+   %option(value="1")  新品、未使用
+   %option(value="1")  未使用に近い
 
  .new-main__send
   .new-main__send_head 配送について

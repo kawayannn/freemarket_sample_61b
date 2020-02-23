@@ -50,6 +50,7 @@ body{
    margin-left: 8px;
   }
   &__form-arbitrary{
+    float: left;
     width: 33px;
     background-color: #bfbfbf;
     color: #fff;
@@ -66,7 +67,7 @@ body{
     font-size: 14px;
     font-weight: 550;
     line-height: 1.4em;
-    margin: 0px 0px;
+    margin-top: 30px;
     padding: 0px 0px;
   }
   &__container{
@@ -103,21 +104,22 @@ body{
   }
   &__sub_head{
     margin-top: 50px;
-    padding: 40px 0px 0px 20px;
+    padding: 40px 0px 0px opx;
   }
   &__send_head{
     color: rgb(136, 136, 136);
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.4em;
     margin-top: 80px;
+    margin-bottom: 24px;
     height: 20px;
   }
 }
 
 .new-main__input{
-  width: 100%;
-  height: 50px;
+  // width: 100%;
+  // height: 50px;
   font-family:sans-serif;
   &__product--name{
     position: relative;
@@ -125,13 +127,15 @@ body{
     align-items: center;
     display: inline-flex;
     box-sizing: border-box;
-    
+    border-radius: 2px;
+    width: 100%;
+    height: 50px;
   }
   &__upload-image{
     height: 150px;
     margin-top: 8px;
     padding: 0px 4px;
-    flex: 1 1 0%;
+    border-radius: 2px;
   }
   &__product--description{
     width: 100%;
@@ -140,9 +144,7 @@ body{
     font-size: 16px;
     margin-top: 10px;
     padding: 13px 16px;
-    line-height: normal;
-    border-color: #ff0211;
-    overflow-wrap: break-word;
+    overflow: hidden;
   }
   &__product--word-count{
     text-align: right;
@@ -166,6 +168,7 @@ body{
   &__product--categories{
   width: 100%;
   height: 50px;
+  margin-top: 20px;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
