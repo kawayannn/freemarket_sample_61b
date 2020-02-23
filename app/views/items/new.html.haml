@@ -2,6 +2,7 @@
 .new_header__top
  .new_header__logo
  = image_tag "logo-acdd90ac4f472d5a6f7a330d33ab1225.svg",size:"189x128"
+
 .new_container
  %main.new_main
   %section.new_main__container
@@ -9,25 +10,40 @@
     %div 
      .new-main__inner
       %h2.new-main__head
+
       .new-main__upload-box
        %h3.new-main__upload_head 
         出品画像
         %span.new-main__form-require 必須
         %p.new-main__upload_sub-head 最大10枚までアップロードできます。
+        .new-main__input__product-image
+        %input{type:"file",accept:"image/pnp,image/jpeg",multiple_style:"display:none"}
+
         .new-main__dropbox-container.clearfix.state-image-number-10
         .new-main__upload-item-container
          .new-main__content
+
           .new-main__from-group
            商品名
            %span.new-main__form-require 必須
+          .new-main__input__product--name
+           %input{type: "text" ,name:"name" ,placeholder:"40文字まで", autocomplete:"off",class: "new-main__input"}
+         
           .new-main__from-group
            商品の説明
            %span.new-main__form-require 必須
+
         .new-main__content.clerfix
         %h3.new-main__sub_head 商品の詳細
+
         .new-main__from-group
          カテゴリー
          %span.new-main__form-require 必須
+        .new-main__select__product--categories
+         %select.new-main__select__product--categories(name="prefecture_id")
+          %option.selected(value="")  --
+          %option(value="1")  レディース
+
          .new-main__from-group
           ブランド
           %span.new-main__form-arbitrary 任意
@@ -71,20 +87,29 @@
         .new-main__button-return もどる
 
 
-%footer.new-footer
- %div
-  %ul.new-footer__container
-   %li 
-    = link_to "" do
-     プライバシーポリシー
-   %li 
-    = link_to "" do
-     メルカリ利用規約
-   %li 
-    = link_to "" do
-     特定商取引に関する規約
+.new-footer
+.new-footer__top
+ .new-footer__top__title
   = link_to "" do
-   = image_tag "logotype-gray-432385160bc60aa0002854fccdef2caf", size:"65x80"
+   プライバシーポリシー
+ .new-footer__top__title
+  = link_to "" do
+   メルカリ利用規約
+ .new-footer__top__title 
+  = link_to "" do
+   特定商取引に関する規約
+
+.new-footer__bottom
+ = link_to "" do
+  = image_tag "logotype-gray-432385160bc60aa0002854fccdef2caf", size:"65x80"
  %p 
   %samll
    © Mercari,inc
+
+
+-# .new-main
+-#     .new-main__header
+-#         お支払い方法
+-#     .new-main__categries
+-#         %select#(name="")
+    
