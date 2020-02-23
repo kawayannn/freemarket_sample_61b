@@ -44,9 +44,10 @@
          %span.new-main__form-require 必須
         .new-main__select__product--categories
          %select.new-main__select__product--categories(name="prefecture_id")
-         %option.selected(value="")  --
-         %option(value="1")  レディース
-
+          %option.selected(value="")  選択してください
+          %option(value="1")  レディース
+          
+        .new-main__brand
          .new-main__from-group
           ブランド
           %span.new-main__form-arbitrary 任意
@@ -54,19 +55,20 @@
           商品の状態
           %span.new-main__form-require 必須
 
-        %h3.new-main__sub_head 配送について
+       .new-main__send
+        .new-main__send_head 配送について
         .new-main__from-group
          配送料の負担
          %span.new-main__form-require 必須
-         .new-main__from-group
-          発送元の地域
-          %span.new-main__form-require 必須
-         .new-main__from-group
-          配送料の負担
-          %span.new-main__form-require 必須
-         .new-main__from-group
-          発送までの日数
-          %span.new-main__form-require 必須
+        .new-main__from-group
+         発送元の地域
+         %span.new-main__form-require 必須
+        .new-main__from-group
+         配送料の負担
+         %span.new-main__form-require 必須
+        .new-main__from-group
+         発送までの日数
+         %span.new-main__form-require 必須
 
          %h3.new-main__sub_head 価格(¥300~9,999,999)
     
