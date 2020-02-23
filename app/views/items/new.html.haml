@@ -36,7 +36,7 @@
   %select.new-main__select__product--categories(name="prefecture_id")
    %option.selected(value="")  選択してください
    %option(value="1")  メンズ
-   %option(value="1")  レディース
+   %option(value="2")  レディース
  
   .new-main__from-group
    ブランド
@@ -50,37 +50,50 @@
   %select.new-main__select__product--categories(name="prefecture_id")
    %option.selected(value="")  選択してください
    %option(value="1")  新品、未使用
-   %option(value="1")  未使用に近い
+   %option(value="2")  未使用に近い
 
  .new-main__send
   .new-main__send_head 配送について
-  .new-main__from-group
-   配送料の負担
-   .new-main__form-require 必須
 
-  .new-main__from-group
-   発送元の地域
-   .new-main__form-require 必須
+ .new-main__from-group
+  配送料の負担
+  .new-main__form-require 必須
+ %select.new-main__select__product--categories(name="prefecture_id")
+  %option.selected(value="")  選択してください
+  %option(value="1")  送料込み(出品者負担)
+  %option(value="2")  着払い(購入者負担)
 
-  .new-main__from-group
-   配送料の負担
-   .new-main__form-require 必須
+ .new-main__from-group
+  発送元の地域
+  .new-main__form-require 必須
+ %select.new-main__select__product--categories(name="prefecture_id")
+  %option.selected(value="")  選択してください
+  %option(value="1")  北海道
+  %option(value="2")  東京
+  %option(value="3")  大阪
 
-  .new-main__from-group
-   発送までの日数
-   .new-main__form-require 必須
-
-  .new-main__sub_head 
+ .new-main__from-group
+  発送までの日数
+  .new-main__form-require 必須
+ %select.new-main__select__product--categories(name="prefecture_id")
+  %option.selected(value="")  選択してください
+  %option(value="1")  1~2日で発送
+  %option(value="2")  3~4日で発送
+  %option(value="3")  5~6日で発送
+  
+ .new-main__sub_head 
   価格(¥300~9,999,999)
 
-  .new-main__from-group
-   販売価格
-   .new-main__form-require 必須
+ .new-main__selling-price
+  販売価格
+  .new-main__selling-price__form-require 必須
+ %input{type:"number",name:"price",placeholder:"0",class:"new-main__selling-price__number"}
+ .new-main__selling-price__unit¥
 
-  .new-main__from-group
-   販売手数料(10%)
-  .new-main__from-group
-   販売利益
+ .new-main__from-group
+  販売手数料(10%)
+ .new-main__from-group
+  販売利益
 
  .new-main__content.new-main__btn-box
   .new-main__button-exhibition 出品する
