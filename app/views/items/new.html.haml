@@ -6,20 +6,23 @@
 .new_container
  %main.new_main
  .new-main__upload-box
-  .new-main__upload_head
-   .new-main__from-group
-    出品画像
-    .new-main__form-require 必須
-   .new-main__upload_sub-head 最大10枚までアップロードできます。
-   %input{type:"file",accept:"image/pnp,image/jpeg",multiple_style:"display:none",placeholder:"ドラッグアンドドロップ", autocomplete:"off",tabindex:"-1",class:"new-main__input__upload-image"}
+ .new-main__upload_head
+ .new-main__from-group
+  .entry
+   出品画像
+   .new-main__form-require 必須
+  .new-main__upload_sub-head 最大10枚までアップロードできます。
+  %input{type:"file",accept:"image/pnp,image/jpeg",multiple_style:"display:none",placeholder:"ドラッグアンドドロップ", autocomplete:"off",tabindex:"-1",class:"new-main__input__upload-image"}
 
  .new-main__upload-item-container
-  .new-main__content
+ .new-main__content
+ .new-main__from-group
+  .entry
+   商品名
+   .new-main__form-require 必須
+  %input{type: "text" ,name:"name" ,placeholder:"　40文字まで", autocomplete:"off",class: "new-main__input__product--name"} 
    .new-main__from-group
-    商品名
-    .new-main__form-require 必須
-   %input{type: "text" ,name:"name" ,placeholder:"　40文字まで", autocomplete:"off",class: "new-main__input__product--name"} 
-   .new-main__from-group
+   .entry
     商品の説明
     .new-main__form-require 必須
    %input{type:"text",name:"desaription",row:"7",placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。",class:"new-main__input__product--description"} 
@@ -30,8 +33,9 @@
   .new-main__sub_head 商品の詳細
 
   .new-main__from-group
-   カテゴリー
-   .new-main__form-require 必須
+   .entry
+    カテゴリー
+    .new-main__form-require 必須
 
   %select.new-main__select__product--categories(name="prefecture_id")
    %option.selected(value="")  選択してください
@@ -39,13 +43,15 @@
    %option(value="2")  レディース
  
   .new-main__from-group
-   ブランド
-   .new-main__form-arbitrary 任意
+   .entry
+    ブランド
+    .new-main__form-arbitrary 任意
   %input{type:"text",name:"brandname",placeholder:"　例））シャネル",autocomplete:"off",class:"new-main__input__product--name"}
 
   .new-main__from-group
-   商品の状態
-   .new-main__form-require 必須
+   .entry
+    商品の状態
+    .new-main__form-require 必須
 
   %select.new-main__select__product--categories(name="prefecture_id")
    %option.selected(value="")  選択してください
@@ -56,16 +62,18 @@
   .new-main__send_head 配送について
 
  .new-main__from-group
-  配送料の負担
-  .new-main__form-require 必須
+  .entry
+   配送料の負担
+   .new-main__form-require 必須
  %select.new-main__select__product--categories(name="prefecture_id")
   %option.selected(value="")  選択してください
   %option(value="1")  送料込み(出品者負担)
   %option(value="2")  着払い(購入者負担)
 
  .new-main__from-group
-  発送元の地域
-  .new-main__form-require 必須
+  .entry
+   発送元の地域
+   .new-main__form-require 必須
  %select.new-main__select__product--categories(name="prefecture_id")
   %option.selected(value="")  選択してください
   %option(value="1")  北海道
@@ -73,8 +81,9 @@
   %option(value="3")  大阪
 
  .new-main__from-group
-  発送までの日数
-  .new-main__form-require 必須
+  .entry
+   発送までの日数
+   .new-main__form-require 必須
  %select.new-main__select__product--categories(name="prefecture_id")
   %option.selected(value="")  選択してください
   %option(value="1")  1~2日で発送
@@ -104,41 +113,37 @@
   .new-main__button-return もどる
 
  .new-main__notes
-  %p.new-main__notes__nomal 禁止されている
-  %a.new-main__notes__text-line 
-   = link_to "" do
+  %p.new-main__notes__nomal 
+   禁止されている
+   = link_to "", class: ".new-main__notes__text-line" do
     行為
-  .new-main__notes__nomal 及び
-  .new-main__nptes__text-line 
-   = link_to "" do
+   及び
+   = link_to "", class: ".new-main__notes__text-line"  do
     出品物
-  .new-main__notes__nomal を必ずご確認ください。
-  .new-main__notes__text-line 
-   = link_to "" do
+   を必ずご確認ください。 
+   = link_to "", class: ".new-main__notes__text-line" do
     偽ブランド品
-  .new-main__notes__nomal や
-  .new-main__notes__text-line 
-   = link_to "" do
+   や 
+   = link_to "", class: ".new-main__notes__text-line" do
     盗品物
-  .new-main__notes__nomal などの販売は犯罪であり、
-  .new-main__notes__nomal 法律により処罰される可能性があります。
-  .new-main__notes__nomal また、出品をもちまして
-  .new-main__notes__text-line 
-   = link_to "" do
+   などの販売は犯罪であり、
+   法律により処罰される可能性があります。
+   また、出品をもちまして 
+   = link_to "", class: ".new-main__notes__text-line" do
     加盟店規約
-  .new-main__notes__nomal に同意したことになります。
+   に同意したことになります。
 
 
 .new-footer
-.new-footer__top
- .new-footer__top__title
-  = link_to "" do
+ %p.new-footer__top
+  .new-footer__top__terms
+  = link_to "",class:".new-footer" do
    プライバシーポリシー
- .new-footer__top__title
-  = link_to "" do
+  .new-footer__top__terms
+  = link_to "",class:".new-footer" do
    メルカリ利用規約
- .new-footer__top__title
-  = link_to "" do
+  .new-footer__top__terms
+  = link_to "",class:".new-footer" do
    特定商取引に関する規約
 
 .new-footer__bottom
