@@ -11,9 +11,15 @@
   .entry
    出品画像
    .new-main__form-require 必須
-  .new-main__upload_sub-head 最大10枚までアップロードできます。
-  %input{type:"file",accept:"image/pnp,image/jpeg",multiple_style:"display:none",placeholder:"ドラッグアンドドロップ", autocomplete:"off",tabindex:"-1",class:"new-main__input__upload-image"}
-
+ .new-main__upload_sub-head 最大10枚までアップロードできます。
+ %label
+  %input{type:"file",accept:"image/pnp,image/jpeg",multiple_style:"display:none", autocomplete:"off",tabindex:"-1", class:"new-main__input__upload-image"}
+  .new-main__upload_function
+   .new-main__upload_function-icon
+   %p.new-main__upload_function-guide
+    ドロップアンドドラッグ
+   %p.new-main__upload_function-guide
+    またはクリックしてダウンロード
  .new-main__upload-item-container
  .new-main__content
  .new-main__from-group
