@@ -42,10 +42,16 @@ body{
     height: 200px;
     background-color: rgb(245, 245, 245);
   }
+  &__upload_function-icon{
+    line-height: center;
+    text-align: center;
+    height: 50%;
+  }
   &__upload_function-guide{
-  font-size: 12px;
+  font-size: 10px;
   line-height: center;
   text-align: center;
+  height: 50%;
   width: 100%;
   }
   &__container{
