@@ -66,4 +66,9 @@
         「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
       .actions
         = f.submit "次へ進む"
+      = link_to "", class:"" do
+        電話番号の確認が必要な理由
+        %i.icon-arrow-right
+      .recaptcha
+        This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
 = render "devise/shared/links"
