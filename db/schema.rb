@@ -12,14 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_02_12_104421) do
 
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "phonenumber", null: false
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id"
-  end
-
   create_table "phones", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "phonenumber", null: false
     t.bigint "user_id"
@@ -34,9 +26,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_104421) do
     t.string "last_name", null: false
     t.string "first_name_kana", null: false
     t.string "last_name_kana", null: false
-    t.integer "year", null: false
-    t.integer "month", null: false
-    t.integer "day", null: false
+    t.date "birthday", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
