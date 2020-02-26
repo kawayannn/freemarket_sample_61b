@@ -154,6 +154,7 @@
   height: auto;
   &__comments{
     &-me{
+      margin-bottom: 50px;
       > img{
         height: 40px;
         width: 40px;
@@ -168,13 +169,13 @@
         font-size: 14px;
       }
       &-body{
+        margin-top: 10px;
         position: relative;
         width: calc(100% - 56px);
         padding: 16px;
         border-radius: 15px;
         line-height: 1.5;
         word-break: break-all;
-        float: left;
         background: #fbf0e6;
           > p{
             font-size: 14px;
@@ -217,20 +218,70 @@
       }
     &-other{
       > img{
-        height: 32px;
-        width: 32px;
+        height: 40px;
+        width: 40px;
         border-radius: 50%;
+        float: left;
+        margin-right: 10px;
       }
-    }
-    &-seller{
-      > img{
-        height: 32px;
-        width: 32px;
+      > p{
+        text-align: left;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      &-body{
+        margin-top: 10px;
+        position: relative;
+        width: calc(100% - 56px);
+        padding: 16px;
+        border-radius: 15px;
+        line-height: 1.5;
+        word-break: break-all;
+        float: right;
+        background: #eef0f4;
+          > p{
+            font-size: 14px;
+          }
+          > i{
+            color: #AAAAAA;
+            font-size: 14px;
+          }
+        }
+      &-body::before{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
         border-radius: 50%;
+        transform: rotate(45deg);
+        left: -28px;
+        top: 15px;
+        border-left: 20px solid #eef0f4;
+        border-top: 20px solid #eef0f4;
+        border-right: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+      }
+      &-body::after{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        transform: rotate(45deg);
+        left: -40px;
+        top: 15px;
+        border-left: 20px solid #ffffff;
+        border-top: 20px solid #ffffff;
+        border-right: 20px solid transparent;
+        border-bottom: 20px solid transparent;
       }
     }
   }
   &__alert{
+    display: inline-block;
+    margin-top: 40px;
     word-wrap: break-word;
     padding: 8px;
     font-size: 14px;
