@@ -1,0 +1,13 @@
+.single-inner
+  %h2.single-inner__head
+    支払い方法
+  .single-inner__cards
+    %h3.single-inner__cards--uper
+      クレジットカード一覧
+    .card.add-card-content
+      = link_to "#", class: "btn add-card-btn btn-red btn-default" do
+        = icon('fas', 'credit-card')
+        クレジットカードを追加する
+    .single-inner__cards--foot
+      = link_to "#" do
+        支払い方法について
