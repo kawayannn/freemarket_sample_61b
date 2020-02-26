@@ -298,12 +298,12 @@ body{
   background-color: rgb(245, 245, 245);
   display: flex;
   text-align: center;
-  padding: 5px 7%;
+  padding: 40px 7%;
   margin: 0px auto;
   max-width: 700px;
   font-size: 12px;
    &__top{
-     padding: 0px 7%;
+     padding:  7%;
      text-align: center;
    }
    &__top__terms{
@@ -315,6 +315,7 @@ body{
       width: 100%;
       margin: 0px auto;
       text-align: center;
+      padding-bottom: 40px;
       float: left;
       background-color: rgb(245, 245, 245);
       font-size: 12px;
