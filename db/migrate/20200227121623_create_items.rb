@@ -6,6 +6,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer     :postage, null: false
       t.text        :description, null: false
       t.integer     :condition, null: false
+      t.integer     :prefecture_id, null: false
       t.references :seller, foreign_key: { to_table: :users }, null: false
       t.references :buyer, foreign_key: { to_table: :users }
       t.references :brand, foreign_key: true

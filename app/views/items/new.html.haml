@@ -69,6 +69,7 @@
    .entry
     発送元の地域
     .new-main__form-require 必須
+  = f.collection_select :prefecture_id, @prefectures, :id, :name, prompt: "--", class: 'input'
   %select.new-main__select__product--categories(name="prefecture_id")
    %option.selected(value="")  選択してください
    %option(value="1")  北海道
