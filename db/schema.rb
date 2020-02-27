@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_121623) do
     t.integer "price", null: false
     t.boolean "postage", null: false
     t.text "description", null: false
+    t.integer "condition", default: 0, null: false
     t.bigint "seller_id", null: false
     t.bigint "buyer_id"
     t.bigint "brand_id"
