@@ -75,11 +75,7 @@
    .entry
     発送までの日数
     .new-main__form-require 必須
-  %select.new-main__select__product--categories(name="prefecture_id")
-   %option.selected(value="")  選択してください
-   %option(value="1")  1~2日で発送
-   %option(value="2")  3~4日で発送
-   %option(value="3")  5~6日で発送
+  = f.select :shipment_day, options_for_select(Item.shipment_days), {prompt: "選択してください"}, {class: "new-main__select__product--categories"}
 
   .new-main__sub_head 
    価格(¥300~9,999,999)
