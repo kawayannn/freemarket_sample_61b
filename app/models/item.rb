@@ -10,7 +10,7 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  enum condition:{"選択してください": nil, "新品、未使用": 0, "未使用に近い": 1}, _prefix: true
+  enum condition:{"新品、未使用": 0, "未使用に近い": 1}
 
-  enum postage:{"選択してください": nil, "送料込み(出品者負担)": 0, "着払い(購入者負担)": 1}, _prefix: true
+  enum postage:{"送料込み(出品者負担)": 0, "着払い(購入者負担)": 1}
 end
