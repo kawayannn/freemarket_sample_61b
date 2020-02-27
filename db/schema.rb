@@ -60,10 +60,12 @@ ActiveRecord::Schema.define(version: 2020_02_27_121623) do
     t.bigint "buyer_id"
     t.bigint "brand_id"
     t.bigint "size_id"
+    t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
     t.index ["size_id"], name: "index_items_on_size_id"
   end
@@ -110,6 +112,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_121623) do
   add_foreign_key "brand_categories", "categories"
   add_foreign_key "categories", "sizes"
   add_foreign_key "items", "brands"
+  add_foreign_key "items", "categories"
   add_foreign_key "items", "sizes"
   add_foreign_key "items", "users", column: "buyer_id"
   add_foreign_key "items", "users", column: "seller_id"
