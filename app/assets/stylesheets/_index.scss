@@ -1,0 +1,78 @@
+.favorite-category{
+  height: 171px;
+  background-color: white;
+  padding: 56px 0 30px;
+  text-align: center;
+  > h2{
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+  &__list{
+    > ul{
+      > li{
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: whitesmoke;
+        border-radius: 15px;
+        font-weight: bold;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.main{
+  background-color: whitesmoke;
+  padding: 42px 210px 100px;
+}
+
+.prodacuts{
+  &__category{
+    margin-bottom: 16px;
+    > h2{
+      font-weight: bold;
+      font-size: 26px;
+      display: inline-block;
+    }
+    > a{
+      color: rgb(0, 149, 238);
+      float: right;
+      font-size: 14px;
+      > i{
+        margin-left: 4px;
+      }
+    }
+  }
+  &__cards{
+    height: 544px;
+    &-block{
+      height: 100%;
+    }
+    &-item{
+      float: left;
+      height: 50%;
+      width: 20%;
+      padding: 10px;
+      position: relative;
+    }
+    &-link{
+      text-decoration: none;
+    }
+    &-content{
+      height: 100%;
+      background-color: white;
+      box-shadow: 1px 1px 3px gray;
+      > img{
+        height: 188px;
+        width: 100%;
+        vertical-align: bottom;
+      }
+      > p{
+        padding: 10px;
+        word-wrap: break-word;
+        color: black;
+      }
+    }
+  }
+}

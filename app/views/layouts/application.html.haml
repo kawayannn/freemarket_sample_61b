@@ -1,5 +1,5 @@
 !!!
-%html
+%html{lang: "ja"}
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
     %title FreemarketSample61b
@@ -7,7 +7,11 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{:href => "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", :type => "text/javascript"}
   %body
-    //= render "shared/header"
+    = render "shared/header"
     = yield
-    //= render "shared/footer"
+    = render "shared/footer"
+
+

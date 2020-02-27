@@ -34,6 +34,9 @@
             vertical-align: top;        
           }
         }
+        .set-submit-btn{
+          margin-top: 42px;
+        }
       }
     }
   }
@@ -57,7 +60,9 @@
   background: #fff;
   line-height: 1.5;
   font-size: 16px;
+  width: 100%;
 }
+
 .select-default{
   position: relative;
   z-index: 2;
@@ -77,9 +82,10 @@
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;
-  margin: 40px 0 0;
 }
 .btn-default{
+  height: 50px;
+  line-height: 50px;
   display: block;
   width: 100%;
   line-height: 48px;
@@ -87,4 +93,5 @@
   border: 1px solid transparent;
   cursor: pointer;
   text-align: center;
+  text-decoration: none;
 }

@@ -5,5 +5,11 @@ class ItemsController < ApplicationController
 
   def buy_check
   end
+  
+  def show
+  end
+  
+  def new
+  end
 
 end
