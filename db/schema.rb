@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_121623) do
     t.integer "postage", null: false
     t.text "description", null: false
     t.integer "condition", null: false
+    t.integer "shipment_days", null: false
     t.integer "prefecture_id", null: false
     t.bigint "seller_id", null: false
     t.bigint "buyer_id"
