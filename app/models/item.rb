@@ -10,5 +10,5 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  enum condition:{"新品、未使用": 0, "未使用に近い": 1}
+  enum condition:{"選択してください": nil, "新品、未使用": 0, "未使用に近い": 1}
 end

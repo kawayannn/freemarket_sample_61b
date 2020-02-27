@@ -54,11 +54,7 @@
     .entry
      商品の状態
      .new-main__form-require 必須
-
-   %select.new-main__select__product--categories(name="prefecture_id")
-    %option.selected(value="")  選択してください
-    %option(value="1")  新品、未使用
-    %option(value="2")  未使用に近い
+   = f.select :condition, options_for_select(Item.conditions), {}, {class: "new-main__select__product--categories"}
 
   .new-main__send
    .new-main__send_head 配送について
