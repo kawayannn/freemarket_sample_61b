@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new
+    @categories = Category.find(1,2,3)
   end
 
   def create
