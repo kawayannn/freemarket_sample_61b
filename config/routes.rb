@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   get 'items/index' => 'items#index'
-  get 'items/show' => 'items#show'
+  get 'items/buy_check' => 'items#buy_check'
   get '/conform_user/:user_id' => 'users#conform_user', as: 'conform_user'
   get '/logout/:user_id' => 'users#logout', as: 'logout'
   get '/conform_card/:user_id' => 'users#conform_card', as: 'conform_card'
