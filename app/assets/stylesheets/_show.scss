@@ -16,10 +16,19 @@
 }
 
 .images{
+  height: 375px;
+  background-color: #FAFAFA;
   float: left;
-  > img{
+  &__main{
     width: 300px;
     height: 300px;
+  }
+  &__smn{
+    display: flex;
+    &-sub{
+      height: 60px;
+      width: 60px;
+    }
   }
 }
 
@@ -75,6 +84,7 @@
   width: 100%;
   margin-top: 24px;
   text-align: center;
+  display: inline-block;
   > h1{
     display: inline-block;
     font-weight: bold;
