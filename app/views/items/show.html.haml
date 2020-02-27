@@ -3,7 +3,13 @@
     %h1 テストタイトル
     .show-contents
       .images
-        = image_tag "ifon.png"
+        = image_tag "ifon.png", class: "images__main"
+        %p.images__smn{id: 'thumbs'}
+          = image_tag "ifon.png", class: "images__smn-sub"
+          = image_tag "logo.png", class: "images__smn-sub"
+          = image_tag "apple.png", class: "images__smn-sub"
+          = image_tag "ifon.png", class: "images__smn-sub"
+          = image_tag "ifon.png", class: "images__smn-sub"
       %table.show-table
         %tr.show-table__user
           %th 
