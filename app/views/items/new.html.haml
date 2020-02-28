@@ -43,7 +43,7 @@
     .entry
      カテゴリー
      .new-main__form-require 必須
-   = f.collection_select :category_id, @categories, :id, :name, {}, {class: "new-main__select__product--categories"}
+   = f.collection_select :category_id, @categories, :id, :name, {prompt: "選択してください"}, {class: "new-main__select__product--categories"}
    .new-main__from-group
     .entry
      ブランド
