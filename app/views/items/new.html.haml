@@ -54,7 +54,7 @@
     .entry
      商品の状態
      .new-main__form-require 必須
-   = f.select :condition, options_for_select(Item.conditions), {prompt: "選択してください"}, {class: "new-main__select__product--categories"}
+   = f.select :condition, options_for_select(Item.conditions.keys.to_a), {prompt: "選択してください"}, {class: "new-main__select__product--categories"}
 
   .new-main__send
    .new-main__send_head 配送について
@@ -63,7 +63,7 @@
    .entry
     配送料の負担
     .new-main__form-require 必須
-  = f.select :postage, options_for_select(Item.postages), {prompt: "選択してください"}, {class: "new-main__select__product--categories"}
+  = f.select :postage, options_for_select(Item.postages.keys.to_a), {prompt: "選択してください"}, {class: "new-main__select__product--categories"}
 
   .new-main__from-group
    .entry
@@ -75,7 +75,7 @@
    .entry
     発送までの日数
     .new-main__form-require 必須
-  = f.select :shipment_day, options_for_select(Item.shipment_days), {prompt: "選択してください"}, {class: "new-main__select__product--categories"}
+  = f.select :shipment_day, options_for_select(Item.shipment_days.keys.to_a), {prompt: "選択してください"}, {class: "new-main__select__product--categories"}
 
   .new-main__sub_head 
    価格(¥300~9,999,999)
