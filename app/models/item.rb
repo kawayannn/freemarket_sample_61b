@@ -7,8 +7,9 @@ class Item < ApplicationRecord
   belongs_to :size
   belongs_to :category
   has_many :comments, dependent: :destroy
-  has_many :images, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images
 
   enum condition:{"新品、未使用": 0, "未使用に近い": 1}
 

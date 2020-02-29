@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new
+    @item.images.new
     @categories = Category.find(1,2,3)
   end
 
@@ -20,7 +21,7 @@ class ItemsController < ApplicationController
 
   private
   def new_item_params
-    params.require(:item).permit(:name, :price, :postage, :description, :prefecture_id, :buyer_id, :brand_id, :size_id, :category_id, :condition, :shipment_day).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :price, :postage, :description, :prefecture_id, :buyer_id, :brand_id, :size_id, :category_id, :condition, :shipment_day, images_attributes: [:src]).merge(seller_id: current_user.id)
   end
 
 end
