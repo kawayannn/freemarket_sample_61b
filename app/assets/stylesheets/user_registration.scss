@@ -1,11 +1,162 @@
-.single-header {
-  text-align: center;
+.all{
+  background: #f5f5f5;
+  cursor: auto;
 }
-.l-single-text {
-  margin: 8px 0 0;
-  padding: 0;
+.head{
+  display:flex;
+  justify-content: center;
+  &__mozi{
+    &--san{
+      li{
+        display: inline-block;
+      }
+    }
+  }
 }
-.year,.month,.day{
-  border-style: solid;
-  border-width: 0;
+.ubody {
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  h2{
+    text-align: center;
+    font-size: 22px;
+    padding: 32px;
+  }
+  &__body{
+    border-top: 1px solid #f5f5f5;
+    max-width: 343px;
+    margin: 0 auto;
+    &--label{
+      margin: 32px auto;
+      label{
+        text-align: left;
+      }
+      span{
+        margin: 0 0 0 8px;
+        padding: 2px 4px;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+        vertical-align: top;
+        background: #ea352d;
+      }
+      .form_long{
+        width: 100%;
+        margin: 8px 0 0;
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        // line-height: 1.5;
+        font-size: 16px;
+        // min-height: 1.5em;
+        outline: 0;
+        font-family: inherit;
+        -webkit-appearance: none;
+        touch-action: manipulation;
+        font-style: inherit;
+        font-weight: inherit;
+        box-sizing: inherit;
+      }
+      .form_short{
+        display: inline-block;
+        width: 45%;
+        margin: 8px 10px 0 0;
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        // line-height: 1.5;
+        font-size: 16px;
+        // min-height: 1.5em;
+        outline: 0;
+        font-family: inherit;
+        -webkit-appearance: none;
+        touch-action: manipulation;
+        font-style: inherit;
+        font-weight: inherit;
+        box-sizing: inherit;
+      }
+      .year,.month,.day{
+        border-style: solid;
+        border-width: 0;
+        display: inline-block;
+        width: 17%;
+        margin: 8px 10px 0 0;
+        height: 48px;
+        padding: 0px 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        font-size: 16px;
+        outline: 0;
+        font-family: inherit;
+        -webkit-appearance: none;
+        touch-action: manipulation;
+        font-style: inherit;
+        font-weight: inherit;
+        box-sizing: inherit;
+      }
+    }
+    &--kakunin{
+      margin: 8px 0 0;
+      h3{
+        font-size: 16px;
+      }
+      p{
+        margin: 8px 0 0;
+        padding: 0;
+        line-height: 1.5;
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+      }
+    }
+    &--usui{
+      color: #888;
+      margin: 8px 0 0;
+      font-size: 14px;
+      display: block;
+    }
+    &--group{
+      .nihongo{
+        text-align: center;
+        margin: 8px 0 0;
+        font-size: 14px;
+        display: block;
+      }
+      .button{
+        width: 100%;
+        height: 50px;
+        margin-top: 32px;
+        text-align: center;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        display: block;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .kuwasiku{
+        margin-top: 32px;
+        font-size: 14px;
+        text-align: right;
+        color: #0099e8;
+        text-decoration: none;
+        display: block;
+      }
+      .eigo{
+        height: 100%;
+        margin-top: 32px;
+        padding: 8px 16px;
+        font-size: 13px;
+        background: #f5f5f5;
+      }
+    }
+  }
 }
