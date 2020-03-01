@@ -13,9 +13,7 @@ class User < ApplicationRecord
       validates :first_name_kana
       validates :last_name_kana
     end
-    validates :year
-    validates :month
-    validates :day
+    validates :birthday
   end
 
   has_one :phone
