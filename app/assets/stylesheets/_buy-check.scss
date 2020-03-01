@@ -1,0 +1,207 @@
+.god {
+  background: #f5f5f5;
+
+  .header {
+    
+    height: 128px;
+    line-height: 128px;
+    text-align: center;
+    color: #333;
+    
+    & img {
+      height: 49px;
+      width: 185px;
+      vertical-align: middle;
+    }
+  }
+
+  .buy-panel {
+    background-color: white;
+    width: 700px;
+    margin: auto;
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  
+    &-title__order{
+      font-size: 22px;
+      padding: 32px;
+      line-height: 1.5;
+      text-align: center;
+      border-bottom: 1px solid #f5f5f5;;
+      background-color:white;
+    }
+
+
+    &__item{
+      height: 10vh;
+      &-detail-inner{
+        &__about{
+          border-bottom: 1px solid #f5f5f5;
+          font-weight: bold;
+          font-size: 22px;
+          padding: 32px 16px;
+          display: flex;
+          justify-content: center;
+          & img{
+            width: 80px;
+            height: 80px;
+          }
+        }
+        .right {
+          width: 247px;
+          margin-left: 16px;
+          font-size: 14px;
+        }
+        &__name{
+          font-size: 14px; 
+          padding: 0 0 8px;
+          line-height: 1.5;
+          text-align: left;
+        }
+        &__fee {
+          font-size: 15px;
+          text-align: left;
+        }
+      }
+    }
+
+    
+      
+
+
+      &__choice {
+        max-width: 343px;
+        margin: auto;
+        padding-bottom: 48px ;
+        text-align: center;
+        &__mit {
+          display: block;
+          list-style: none;
+          list-style-type: disc;
+          margin-block-start: 1em;
+          .message {
+            max-width: 343px;
+            height: 32px;
+            margin: 24px auto;
+            &__ani {
+              font-size: 18px;
+              display: table-cell;
+              padding: 12px 0px 0px 0px;
+              float: left;
+            }
+            &__yu {
+              font-size: 30px;
+              display: table-cell;
+              text-align: right;
+              float: right;
+            }  
+          }  
+
+          .lower {
+            color: currentColor;
+            margin: 24px 0 0 0;
+            box-sizing: inherit;
+            text-shadow: none;
+            border-bottom: 1px solid #f5f5f5;
+            &__icon-check{
+              color: #ccc;
+              background: #ccc;
+              position: absolute;
+              z-index: 1;
+              width: 20px;
+              height: 20px;
+              border-radius: 2px;
+              border: 1px solid #ccc;
+              font-size: 10px;
+              line-height: 17px;
+              text-align: center;
+              vertical-align: middle;
+              transition: all ease-out .3s;
+            }
+            &__point {
+              color: #888;
+              position: relative;
+              z-index: 2;
+              padding: 0 0 0 28px;
+              font-size: 14px;
+              font-weight: 400;
+              vertical-align: middle;
+              text-align: left;
+              margin: 24px 0 32px;
+            }
+          }
+        }
+
+        .coo {
+          border-bottom: 1px solid #f5f5f5;
+          font-size: 14px;
+          text-align: left;
+          &__pay {
+            padding: 32px 0;
+            &--way{
+            }
+            .tea {
+              display: flex;
+              &__pointt{
+                color: #0099e8;
+                margin-top: 10px;
+              }
+              &__user {
+                color: #0099e8;
+                margin-top: 8px;
+                padding-left: 4px;
+              }
+            }
+          }
+        }
+
+      &__end {
+        height: 10vh;
+        text-align: center;
+      }
+    }
+    .to {
+      padding: 32px 0;
+      border-bottom: 1px solid #f5f5f5;
+      &__grand {
+        font-size: 14px;
+
+        &--papy {
+          display: flex;
+          justify-content: space-between;
+          width: 342px;
+
+          &__send {
+          }
+          &__change {
+            color: #0099e8;
+          }
+        }
+        &--person {
+          text-align: left;
+        }
+      }  
+    } 
+    
+    
+
+    .choice{
+      display: table;
+      margin: 16px auto 0;
+      margin-top: 32px;
+
+      &__end{
+        text-decoration: none;
+        color: white;
+        background-color: #888888;
+        height: 50px;
+        font-size: 14px;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+        width: 668px;
+        transition: all .3s;
+        
+      }
+    }
+  }
+}
