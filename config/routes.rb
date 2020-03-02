@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: "home#index"
 
+  get 'root/registrations' => 'home#registrations'
   get 'items/index' => 'items#index'
   get 'items/buy_check' => 'items#buy_check'
   get '/conform_user/:user_id' => 'users#conform_user', as: 'conform_user'

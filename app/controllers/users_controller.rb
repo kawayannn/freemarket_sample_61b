@@ -15,6 +15,9 @@ class UsersController < ApplicationController
   def mypage
   end
 
+  def registrations
+  end
+
   private
   def set_user
     @user = User.find(params[:id])
