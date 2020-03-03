@@ -17,10 +17,6 @@
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "form_long"
         .ubody__body--label
           = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "form_long"
-        -# - if devise_mapping.rememberable?
-        -#   .field
-        -#     = f.check_box :remember_me
-        -#     = f.label :remember_me
         .ubody__body--group
           = f.submit "ログイン", class: "button"
   .new-footer
