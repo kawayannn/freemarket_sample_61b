@@ -3,7 +3,7 @@
     %header.head
       %h1.head--gazo
         = link_to "/", class:"" do
-          = image_tag 'logo.png', :size =>'185x49'
+          = image_tag 'logo.png', :size =>'185x80'
       .head__mozi
         %ol.head__mozi--san
           %li
@@ -21,3 +21,20 @@
             %br/
             会員登録が完了しました。
           = link_to "メルカリを始める", root_path, class: "button-p"
+    .new-footer
+      %p.new-footer__top
+      .new-footer__top__terms
+        = link_to "",class:".new-footer" do
+          プライバシーポリシー
+      .new-footer__top__terms
+        = link_to "",class:".new-footer" do
+          メルカリ利用規約
+      .new-footer__top__terms
+        = link_to "",class:".new-footer" do
+          特定商取引に関する規約
+      .new-footer__bottom
+        = link_to "" do
+          = image_tag "logotype-gray-432385160bc60aa0002854fccdef2caf.svg", size:"65x80"
+        %p 
+          %samll
+            © Mercari,inc
