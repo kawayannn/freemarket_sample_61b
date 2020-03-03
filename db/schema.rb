@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_105544) do
     t.text "description", null: false
     t.integer "condition", null: false
     t.integer "shipment_day", null: false
+    t.integer "status", default: 0, null: false
     t.integer "prefecture_id", null: false
     t.bigint "seller_id", null: false
     t.bigint "buyer_id"
