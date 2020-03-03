@@ -19,4 +19,13 @@ class User < ApplicationRecord
   end
 
   has_one :phone
+
+  # あるユーザーが出品した全ての商品
+  has_many :sell_items, class_name: 'Item', foreign_key: 'seller_id', dependent: :destroy
+  # あるユーザーが出品し、売れた商品
+  has_many :sold_items, -> { where("buyer_id is not NULL") }, class_name: 'Item', foreign_key: 'seller_id'
+  # あるユーザーが出品し、まだ売れていない商品
+  has_many :salling_items, -> { where("buyer_id is NULL")}, class_name: "Item", foreign_key: 'seller_id'
+  # あるユーザーが購入した商品
+  has_many :buy_items, class_name: 'Item', foreign_key: 'buyer_id'
 end
