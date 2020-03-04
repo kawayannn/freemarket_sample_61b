@@ -23,6 +23,11 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
+  def get_brand
+    return nil if params[:keyword] == ""
+    @result = Brand.where("name LIKE ?", "%#{params[:keyword]}%")
+  end
+
   def create
     @item = Item.create(new_item_params)
   end
