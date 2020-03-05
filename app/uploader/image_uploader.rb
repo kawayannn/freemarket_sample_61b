@@ -7,8 +7,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   else
     storage :fog
   end
-  
-  storage :fog
+
+  # Choose what kind of storage to use for this uploader:
 
   def store_dir
     "uploads/# {model.class.to_s.underscore}/# {mounted_as}/# {model.id}"
