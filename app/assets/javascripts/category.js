@@ -30,6 +30,7 @@ $(document).on('turbolinks:load', function(){
     $('#parent_category').on('change', function(){
       var parentCategory = document.getElementById('parent_category').value;
       if (parentCategory != ""){
+        $('#size').remove();
         $.ajax({
           url: 'get_category_children',
           type: 'GET',
@@ -38,6 +39,7 @@ $(document).on('turbolinks:load', function(){
         })
         .done(function(children){
           $('#child_category').remove();
+          $('#size').remove();
           var insertHTML = '';
           children.forEach(function(child){
             insertHTML += appendOption(child);
@@ -50,6 +52,7 @@ $(document).on('turbolinks:load', function(){
       }else{
         $('#child_category').remove();
         $('#grandchild_category').remove(); 
+        $('#size').remove();
       }
     });
     $(document).on("change", "#child_category", function() {
@@ -64,6 +67,7 @@ $(document).on('turbolinks:load', function(){
         .done(function(grandchildren){
             console.log('ok')
             $('#grandchild_category').remove();
+            $('#size').remove();
             var insertHTML = '';
             grandchildren.forEach(function(grandchild){
               insertHTML += appendOption(grandchild);

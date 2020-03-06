@@ -28,6 +28,10 @@ class ItemsController < ApplicationController
     @result = Brand.where("name LIKE ?", "%#{params[:keyword]}%")
   end
 
+  def get_size
+    @size_group = Category.find(params[:grandchild_id]).size.children
+  end
+
   def create
     @item = Item.create(new_item_params)
   end
