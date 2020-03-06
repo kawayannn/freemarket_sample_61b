@@ -18,15 +18,19 @@ $(document).on('turbolinks:load', function(){
   }
 
   $("#brand-search-field").on("keyup", function(){
+    var grandchildCategory = document.getElementById('grandchild_category').value;
     var input = $("#brand-search-field").val();
     $.ajax({
       type: 'GET',
       url: 'get_brand',
-      data: {keyword: input},
+      data: { 
+              keyword: input,
+              grandchild_id: grandchildCategory 
+            },
       dataType: 'json'
     })
     .done(function(results){
-      console.log('ok')
+      console.log(grandchildCategory)
       $("#brand-search-result").empty();
       if (results.length !== 0) {
         results.forEach(function(result){
