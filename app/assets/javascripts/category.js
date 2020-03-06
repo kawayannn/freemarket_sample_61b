@@ -31,6 +31,8 @@ $(document).on('turbolinks:load', function(){
       var parentCategory = document.getElementById('parent_category').value;
       if (parentCategory != ""){
         $('#size').remove();
+        $('#child_category').remove();
+        $('#grandchild_category').remove(); 
         $.ajax({
           url: 'get_category_children',
           type: 'GET',
