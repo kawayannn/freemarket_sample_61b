@@ -25,7 +25,8 @@ class ItemsController < ApplicationController
 
   def get_brand
     return nil if params[:keyword] == ""
-    @result = Brand.where("name LIKE ?", "%#{params[:keyword]}%")
+    brands = Category.find(params[:grandchild_id]).brands
+    @result = brands.where("name LIKE ?", "%#{params[:keyword]}%")
   end
 
   def get_size
