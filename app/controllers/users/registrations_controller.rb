@@ -30,6 +30,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new_phone and return
     end
     @user.build_phone(@phone.attributes)
+    binding.pry
     @user.save
     sign_in(:user, @user)
   end

@@ -16,10 +16,7 @@ class User < ApplicationRecord
     validates :year
     validates :month
     validates :day
-  end
-  
-    mount_uploader :image, ImageUploader
-    end
-
-  has_one :phone
+    end  
+    # mount_uploader :image, ImageUploader
+    has_one :phone
 end
