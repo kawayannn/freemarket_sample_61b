@@ -6,9 +6,9 @@ require 'carrierwave/storage/fog'
 CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
 
 CarrierWave.configure do |config|
-  if Rails.env.development? || Rails.env.test? #開発とテストは今まで通りに
-    config.storage = :file
-  elsif Rails.env.production? 
+  # if Rails.env.development? || Rails.env.test? #開発とテストは今まで通りに
+  #   config.storage = :file
+  # elsif Rails.env.production? 
     config.storage = :fog
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
@@ -19,11 +19,9 @@ CarrierWave.configure do |config|
     }
     config.fog_directory  = 'freemarket61bpooh'
     config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/freemarket61bpooh'
-    config.fog_directory  = 'freemarketsample61b'
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/freemarketsample61b'
     
   end
 # 開発環境はlocalに保存
-  config.storage :file
-  config.enable_processing = false if Rails.env.test? #test:処理をスキップ
-  end
+  # config.storage :file
+  # config.enable_processing = false if Rails.env.test? #test:処理をスキップ
+  # end
