@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_07_172448) do
+ActiveRecord::Schema.define(version: 2020_03_09_052355) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "zip_code", null: false
@@ -67,6 +67,15 @@ ActiveRecord::Schema.define(version: 2020_03_07_172448) do
     t.index ["ancestry"], name: "index_sizes_on_ancestry"
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "first_name", null: false
@@ -81,8 +90,6 @@ ActiveRecord::Schema.define(version: 2020_03_07_172448) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "provider"
-    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["nickname"], name: "index_users_on_nickname"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -92,4 +99,5 @@ ActiveRecord::Schema.define(version: 2020_03_07_172448) do
   add_foreign_key "brand_categories", "brands"
   add_foreign_key "brand_categories", "categories"
   add_foreign_key "categories", "sizes"
+  add_foreign_key "sns_credentials", "users"
 end
