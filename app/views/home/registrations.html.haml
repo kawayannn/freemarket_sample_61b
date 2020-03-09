@@ -9,8 +9,8 @@
     .ubody__body
       .ubody__body--group
         =link_to "メールアドレスで登録する", new_user_registration_path, class: "button-r"
-        =link_to "fecebookで登録する", new_user_registration_path, class: "button-b"
-        =link_to "googleで登録する", new_user_registration_path, class: "button-w"
+        =link_to "fecebookで登録する", user_facebook_omniauth_authorize_path, class: "button-b"
+        =link_to "googleで登録する", user_google_oauth2_omniauth_authorize_path, class: "button-w"
   .new-footer
     %p.new-footer__top
     .new-footer__top__terms
