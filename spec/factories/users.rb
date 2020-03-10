@@ -2,12 +2,14 @@ FactoryBot.define do
 
   factory :user do
     nickname              {"yyysss"}
-    first_name            {"yyy"}
-    last_name             {"sss"}
-    first_name_kana       {"yyy"}
-    last_name_kana        {"sss"}
-    birthday              {"10"}
-    email                 {"kkk@gmail.com"}
+    first_name            {"田中"}
+    last_name             {"太郎"}
+    first_name_kana       {"タナカ"}
+    last_name_kana        {"タロウ"}
+    year                  {"10"}
+    month                 {"5"}
+    day                   {"1"}
+    email                 {Faker::Internet.free_email}
     password              {"00000000"}
   end
 
