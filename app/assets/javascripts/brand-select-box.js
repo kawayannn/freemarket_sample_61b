@@ -30,7 +30,6 @@ $(document).on('turbolinks:load', function(){
       dataType: 'json'
     })
     .done(function(results){
-      console.log(grandchildCategory)
       $("#brand-search-result").empty();
       if (results.length !== 0) {
         results.forEach(function(result){

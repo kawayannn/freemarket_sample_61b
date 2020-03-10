@@ -67,7 +67,6 @@ $(document).on('turbolinks:load', function(){
           dataType: 'json'
         })
         .done(function(grandchildren){
-            console.log('ok')
             $('#grandchild_category').remove();
             $('#size').remove();
             var insertHTML = '';

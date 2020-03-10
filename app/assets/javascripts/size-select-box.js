@@ -30,7 +30,6 @@ $(document).on('turbolinks:load', function(){
           var insertHTML = '';
           sizes.forEach(function(size){
             insertHTML += appendSizeOption(size);
-            console.log(insertHTML)
           });
           appendSizeBox(insertHTML);
       })
