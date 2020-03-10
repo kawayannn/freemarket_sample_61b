@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable,
           :omniauthable, omniauth_providers: %i[facebook google_oauth2]
+
+  has_one :phone
+  has_many :sns_credentials, dependent: :destroy
+
   with_options presence: true do
     validates :nickname, length: { maximum: 10 }
     with_options format: {with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/} do
@@ -39,7 +43,7 @@ class User < ApplicationRecord
       return { user: user ,sns: sns}
     end
 
-   def self.with_sns_data(auth, snscredential)
+  def self.with_sns_data(auth, snscredential)
     user = User.where(id: snscredential.user_id).first
     unless user.present?
       user = User.new(
@@ -48,9 +52,9 @@ class User < ApplicationRecord
       )
     end
     return {user: user}
-   end
+  end
 
-   def self.find_oauth(auth)
+  def self.find_oauth(auth)
     uid = auth.uid
     provider = auth.provider
     snscredential = SnsCredential.where(uid: uid, provider: provider).first
@@ -63,6 +67,5 @@ class User < ApplicationRecord
     end
     return { user: user ,sns: sns}
   end
-  has_one :phone
-  has_many :sns_credentials, dependent: :destroy
+
 end
