@@ -1,10 +1,50 @@
-%h2 住所情報登録
-= form_for @phone do |f|
-  = render "devise/shared/error_messages", resource: @phone
-  .field
-    = f.label :phonenumber,"電話番号"
-    %br/
-    = f.text_field :phonenumber
-  .actions
-    = f.submit "登録"
+%body
+  .all
+    %header.head
+      %h1.head--gazo
+        = link_to "/", class:"" do
+          = image_tag 'logo.png', :size =>'185x49'
+      .head__mozi
+        %ol.head__mozi--san
+          %li
+            会員情報
+          %li
+            電話番号認証
+          %li
+            完了
+    .ubody
+      %h2 電話番号の確認
+      .ubody__body
+        = form_for @phone do |f|
+          = render "devise/shared/error_messages", resource: @phone
+          .ubody__body--label
+            = f.label :phonenumber,"携帯電話の番号"
+            %br/
+            = f.text_field :phonenumber, placeholder: "携帯電話の番号を入力", class: "form_long"
+          .ubody__body--kakunin
+            %p
+              本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+          .ubody__body--group
+            = f.submit "SMSを送信する", class: "button"
+            %p.nihongo
+              ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+            = link_to "", class:"kuwasiku" do
+              電話番号の確認が必要な理由＞
+    .new-footer
+      %p.new-footer__top
+      .new-footer__top__terms
+        = link_to "",class:".new-footer" do
+          プライバシーポリシー
+      .new-footer__top__terms
+        = link_to "",class:".new-footer" do
+          メルカリ利用規約
+      .new-footer__top__terms
+        = link_to "",class:".new-footer" do
+          特定商取引に関する規約
+      .new-footer__bottom
+        = link_to "" do
+          = image_tag "logotype-gray-432385160bc60aa0002854fccdef2caf.svg", size:"65x80"
+        %p 
+          %samll
+            © Mercari,inc
 = render "devise/shared/links"
