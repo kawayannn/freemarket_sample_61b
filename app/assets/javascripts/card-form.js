@@ -2,8 +2,8 @@ $(document).on('turbolinks:load', function(){
   Payjp.setPublicKey('pk_test_0a5c670b1657138aa929d4b9');
   const btn = document.getElementById('add-card-btn');
   
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
+  if (btn != null) {
+    btn.addEventListener("click", (e) => {
     $(function(){
       form = $("#chargeForm")
       const card = {
@@ -19,7 +19,8 @@ $(document).on('turbolinks:load', function(){
         console.log(form.append($('<input type="hidden" name="payjpToken" />').val(token)));
         console.log(token);
         form.submit();
-      })
+        })
+      });
     });
-  });
+  }
 });

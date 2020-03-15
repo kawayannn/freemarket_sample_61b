@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   get '/conform_card/:user_id' => 'users#conform_card', as: 'conform_card'
   get '/edit_profile/:user_id' => 'users#edit_profile', as: 'edit_profile'
   get '/mypage/:user_id' => 'users#mypage', as: 'mypage'
-  post '/pay' => 'users#pay'
-
 
   resources :items, only:[:show,:new, :create,:buy_check] do
     collection do
@@ -20,7 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-
+  resources :cards, only:[:new, :create]  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   devise_for :users, controllers: {
