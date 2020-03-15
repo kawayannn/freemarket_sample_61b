@@ -1,6 +1,7 @@
 .main-contents
   .show-item-wrapper
-    %h1 テストタイトル
+    %h1
+      = @item.name
     .show-contents
       .images
         = image_tag "ifon.png", class: "images__main"
@@ -15,7 +16,7 @@
           %th 
             出品者
           %td
-            テスト
+            =@user.nickname
             %br
             %i.fas.fa-smile-beam
             %span 11
@@ -27,40 +28,39 @@
           %th 
             カテゴリー
           %td
-            テスト
+            =@category.parent.parent.name
+            %br
+            =@category.parent.name
+            %br
+            =@category.name
         %tr
           %th 
             ブランド
           %td
-            テスト
+            =@item.brand
         %tr
           %th 
             商品の状態
           %td
-            テスト
+            =@item.condition
         %tr
           %th 
             配送料の負担
           %td
-            テスト
-        %tr
-          %th 
-            配送の方法
-          %td
-            テスト
+            =@item.postage
         %tr
           %th 
             発送元地域
           %td
-            テスト
+            =@item.prefecture.name
         %tr
           %th 
             発送日の目安
           %td
-            テスト
+            =@item.shipment_day
     .show-item-price
       %h1
-        ¥7,000
+        = @item.price
       %span.show-item-price__tax
         (税込)
       %span.show-item-price__sent
@@ -72,7 +72,7 @@
       = link_to "" do
         購入画面に進む
     %p.show-item-description
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      =@item.description
     .show-item-btns
       .show-item-btns__like
         %i.fas.fa-heart
