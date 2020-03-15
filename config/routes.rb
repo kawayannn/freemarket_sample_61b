@@ -9,14 +9,15 @@ Rails.application.routes.draw do
   get '/edit_profile/:user_id' => 'users#edit_profile', as: 'edit_profile'
   get '/mypage/:user_id' => 'users#mypage', as: 'mypage'
 
+  resources :items, only:[:show,:new, :create,:buy_check,:index] do
 
-  resources :items, only:[:show,:new, :create,:buy_check] do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_brand', defaults: { format: 'json' }
       get 'get_size', defaults: { format: 'json' }
     end
+
   end
 
 

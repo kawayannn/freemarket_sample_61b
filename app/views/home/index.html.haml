@@ -10,59 +10,6 @@
 .main
   .prodacuts
     .prodacuts__category
-      %h2 新着アイテム
-      = link_to "" do
-        もっと見る
-        %i.fa.fa-chevron-right
-    .prodacuts__cards
-      %ul.prodacuts__cards-block
-        %li.prodacuts__cards-item
-          = link_to "", class: "prodacuts__cards-link" do
-            .prodacuts__cards-content
-              = image_tag "image.jpg"
-              %p testitemttttttttttttttttttttt
-        %li.prodacuts__cards-item
-          = link_to "", class: "prodacuts__cards-link" do
-            .prodacuts__cards-content
-              = image_tag "image.jpg"
-              %p testitemttttttttttttttttttttt
-        %li.prodacuts__cards-item
-          = link_to "", class: "prodacuts__cards-link" do
-            .prodacuts__cards-content
-              = image_tag "image.jpg"
-              %p testitemttttttttttttttttttttt
-        %li.prodacuts__cards-item
-          = link_to "", class: "prodacuts__cards-link" do
-            .prodacuts__cards-content
-              = image_tag "image.jpg"
-              %p testitemttttttttttttttttttttt
-        %li.prodacuts__cards-item
-          = link_to "", class: "prodacuts__cards-link" do
-            .prodacuts__cards-content
-              = image_tag "image.jpg"
-              %p testitemttttttttttttttttttttt
-        %li.prodacuts__cards-item
-          = link_to "", class: "prodacuts__cards-link" do
-            .prodacuts__cards-content
-              = image_tag "image.jpg"
-              %p testitemttttttttttttttttttttt
-        %li.prodacuts__cards-item
-          = link_to "", class: "prodacuts__cards-link" do
-            .prodacuts__cards-content
-              = image_tag "image.jpg"
-              %p testitemttttttttttttttttttttt
-        %li.prodacuts__cards-item
-          = link_to "", class: "prodacuts__cards-link" do
-            .prodacuts__cards-content
-              = image_tag "image.jpg"
-              %p testitemttttttttttttttttttttt
-        %li.prodacuts__cards-item
-          = link_to "", class: "prodacuts__cards-link" do
-            .prodacuts__cards-content
-              = image_tag "image.jpg"
-              %p testitemttttttttttttttttttttt
-        %li.prodacuts__cards-item
-          = link_to "", class: "prodacuts__cards-link" do
-            .prodacuts__cards-content
-              = image_tag "image.jpg"
-              %p testitemttttttttttttttttttttt
+    %h2 レディース新着アイテム
+    - @image.each do |image|
+      =  image_tag 

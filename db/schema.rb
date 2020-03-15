@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(version: 2020_02_28_105544) do
     t.text "description", null: false
     t.integer "condition", null: false
     t.integer "shipment_day", null: false
-    t.integer "status", default: 0, null: false
     t.integer "prefecture_id", null: false
     t.bigint "seller_id", null: false
     t.bigint "buyer_id"
@@ -104,7 +103,9 @@ ActiveRecord::Schema.define(version: 2020_02_28_105544) do
     t.string "last_name", null: false
     t.string "first_name_kana", null: false
     t.string "last_name_kana", null: false
-    t.date "birthday", null: false
+    t.integer "year", null: false
+    t.integer "month", null: false
+    t.integer "day", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
