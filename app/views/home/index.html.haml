@@ -12,4 +12,5 @@
     .prodacuts__category
     %h2 レディース新着アイテム
     - @image.each do |image|
-      =  image_tag 
+      .ladies 
+      = image_tag image.to_s
