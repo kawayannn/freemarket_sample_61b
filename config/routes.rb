@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/edit_profile/:user_id' => 'users#edit_profile', as: 'edit_profile'
   get '/mypage/:user_id' => 'users#mypage', as: 'mypage'
   get '/buy_check/:item_id' => 'items#buy_check', as: 'buy_check'
+  post '/buy/:item_id' => 'items#buy', as: 'buy'
 
   resources :items, only:[:show,:new, :create,:buy_check] do
     collection do

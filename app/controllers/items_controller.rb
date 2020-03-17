@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  require 'payjp'
 
   def index
   end
@@ -9,9 +10,23 @@ class ItemsController < ApplicationController
     if @user.has_card?
       card = Card.where(user_id: current_user.id).first
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @card = customer.cards.retrieve(card.card_id)
+      @customer = Payjp::Customer.retrieve(card.customer_id)
+      @card = @customer.cards.retrieve(card.card_id)
     end
+  end
+
+  def buy
+    binding.pry
+    @item = Item.find(params[:item_id])
+    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
+    card = Card.where(user_id: current_user.id).first
+    customer = Payjp::Customer.retrieve(card.customer_id)
+    charge = Payjp::Charge.create(
+      amount: @item.price,
+      customer: customer,
+      card: params[:payjp_token],
+      currency: 'jpy'
+    )
   end
   
   def show
