@@ -21,6 +21,7 @@ class User < ApplicationRecord
     validates :birthday
   end
 
+# oauth認証メソッド
   def self.without_sns_data(auth)
     user = User.where(email: auth.info.email).first
 
