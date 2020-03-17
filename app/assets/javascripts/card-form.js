@@ -4,6 +4,7 @@ $(document).on('turbolinks:load', function(){
   
   if (btn != null) {
     btn.addEventListener("click", (e) => {
+      e.preventDefault();
     $(function(){
       form = $("#chargeForm")
       const card = {
@@ -16,8 +17,6 @@ $(document).on('turbolinks:load', function(){
       Payjp.createToken(card, function(s, response){
         var token = response.id;
         form.append($('<input class="payjp-token" name="payjp_token" type="hidden" />').val(token));
-        console.log(form.append($('<input type="hidden" name="payjpToken" />').val(token)));
-        console.log(token);
         form.submit();
         })
       });

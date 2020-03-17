@@ -14,8 +14,9 @@
               = "************#{@card.last4}"
             .card__form--expiration
               = "#{sprintf("%02d", @card.exp_month)}/#{@card.exp_year % 100}"
-            %button.card__form--delete-btn
-              削除する
+            = link_to card_path(@card), method: :delete do
+              %button.card__form--delete-btn
+                削除する
       .single-inner__cards--foot
         = link_to "#" do
           支払い方法について
