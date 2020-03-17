@@ -7,21 +7,42 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     @user = User.new
+    session[:provider] = session[:provider]
+    session[:uid] = session[:uid]
   end
 
   # POST /resource
+  #1ページ目
   def create
     @user = User.new(sign_up_params)
+    # バリデーションチェック
     unless @user.valid?
       flash.now[:alert] = @user.errors.full_messages
       render :new and return
     end
-    session["devise.regist_data"] = {user: @user.attributes}
-    session["devise.regist_data"][:user]["password"] = params[:user][:password]
-    @phone = @user.build_phone
-    render :new_phone
+
+    #SNSで登録する場合
+    if session[:provider].present? && session[:uid].present?
+      # パスワードは自動生成する
+      password = Devise.friendly_token.first(7)
+      session["devise.regist_data"] = {user: @user.attributes}
+      @user.save
+      session["devise.regist_data"][:user]["password"] = password
+      params[:user][:password_confirmation] = password
+      sns = SnsCredential.create(user_id: @user.id,uid: session[:uid], provider: session[:provider])
+      @phone = @user.build_phone
+      render :new_phone
+    #メールアドレスで登録する場合
+    else
+      session["devise.regist_data"] = {user: @user.attributes}
+      session["devise.regist_data"][:user]["password"] = params[:user][:password]
+      @phone = @user.build_phone
+      render :new_phone
+    end
+    
   end
 
+  #2ページ目
   def create_phone
     @user = User.new(session["devise.regist_data"]["user"])
     @phone = Phone.new(phone_params)
