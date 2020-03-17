@@ -75,7 +75,7 @@
         
           
             
-          %form.card-form{method: :post, action: "/buy/#{@item.id}", id: "buyForm"}
+          %form{method: :post, action: "/buy/#{@item.id}", id: "buyForm"}
             %input{type: "hidden", name: "payjp_token", value: "#{@card.id}"}
             .choice
               %button.choice__end{type: "submit"}

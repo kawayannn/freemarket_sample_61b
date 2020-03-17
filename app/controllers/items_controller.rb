@@ -16,7 +16,6 @@ class ItemsController < ApplicationController
   end
 
   def buy
-    binding.pry
     @item = Item.find(params[:item_id])
     Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
     card = Card.where(user_id: current_user.id).first
