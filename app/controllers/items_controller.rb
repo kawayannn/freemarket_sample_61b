@@ -4,6 +4,14 @@ class ItemsController < ApplicationController
   end
 
   def buy_check
+    @item = Item.find(params[:item_id])
+    @user = User.find(current_user.id)
+    if @user.has_card?
+      card = Card.where(user_id: current_user.id).first
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @card = customer.cards.retrieve(card.card_id)
+    end
   end
   
   def show

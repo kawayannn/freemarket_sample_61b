@@ -26,4 +26,8 @@ class User < ApplicationRecord
   has_many :salling_items, -> { where("buyer_id is NULL")}, class_name: "Item", foreign_key: 'seller_id'
   # あるユーザーが購入した商品
   has_many :buy_items, class_name: 'Item', foreign_key: 'buyer_id'
+
+  def has_card?
+    Card.where(user_id: self.id).first.present?
+  end
 end
