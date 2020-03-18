@@ -65,7 +65,7 @@
         (税込)
       %span.show-item-price__sent
         送料込み
-    - if @item.on_display? || @item.seller_id != current_user.id
+    - if @item.on_display? && @item.seller_id != current_user.id
       .show-item-barance
         残高¥99,999をお持ちです
         .show-item-barance__try
