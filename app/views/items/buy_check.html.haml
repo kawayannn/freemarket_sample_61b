@@ -77,6 +77,7 @@
             
           %form{method: :post, action: "/buy/#{@item.id}", id: "buyForm"}
             %input{type: "hidden", name: "payjp_token", value: "#{@card.id}"}
+            %input{type: "hidden", name: "status", value: "出品停止"}
             .choice
               %button.choice__end{type: "submit"}
                 購入する

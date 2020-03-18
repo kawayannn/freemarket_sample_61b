@@ -26,6 +26,7 @@ class ItemsController < ApplicationController
       card: params[:payjp_token],
       currency: 'jpy'
     )
+    @item.update(status_params)
   end
   
   def show
@@ -65,6 +66,10 @@ class ItemsController < ApplicationController
   private
   def new_item_params
     params.require(:item).permit(:name, :price, :postage, :description, :prefecture_id, :buyer_id, :brand_id, :size_id, :category_id, :condition, :shipment_day, images_attributes: [:src]).merge(seller_id: current_user.id)
+  end
+
+  def status_params
+    params.permit(:status)
   end
 
 end
