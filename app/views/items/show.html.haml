@@ -65,14 +65,14 @@
         (税込)
       %span.show-item-price__sent
         送料込み
-    - if @item.status == "出品中"
+    - if @item.on_display?
       .show-item-barance
         残高¥99,999をお持ちです
         .show-item-barance__try
       .go-purchase
         = link_to buy_check_path(@item) do
           購入画面に進む
-    - elsif @item.status == "出品停止"
+    - elsif @item.sellout?
       %h1.go-purchase.sellout_message
         売り切れました      
     %p.show-item-description
