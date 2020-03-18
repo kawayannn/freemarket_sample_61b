@@ -26,10 +26,10 @@ class Item < ApplicationRecord
   enum status:{"出品中": 0, "取引中": 1, "出品停止": 2}
 
   def on_display?
-    self.status == "出品中"
+    self.status == "出品中" && self.buyer_id.blank?
   end
 
   def sellout?
-    self.status == "出品停止"
+    self.status == "出品停止" && self.buyer_id.present?
   end
 end

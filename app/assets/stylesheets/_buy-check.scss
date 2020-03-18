@@ -145,6 +145,9 @@
                 color: #0099e8;
                 margin-top: 10px;
               }
+              a{
+                text-decoration: none;
+              }
               &__user {
                 color: #0099e8;
                 margin-top: 8px;
@@ -200,7 +203,9 @@
         vertical-align: middle;
         width: 100%;
         transition: all .3s;
-        
+      }
+      .has-card{
+        background-color: red;
       }
     }
   }

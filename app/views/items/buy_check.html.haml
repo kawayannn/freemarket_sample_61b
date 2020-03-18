@@ -47,7 +47,7 @@
                 %p.coo__pay--way
                   支払い方法
                 .tea
-                  - if @user.has_card?              
+                  - if current_user.has_card?              
                     %p.card_info
                       クレジットカード
                       %br
@@ -58,8 +58,9 @@
                   - else
                     %p.tea__pointt
                       %i{class: "fa fa-plus-circle icons"}
-                    %p.tea__user
-                      登録してください
+                    = link_to new_card_path do
+                      %p.tea__user
+                        登録してください
               
           .to
             .to__grand
@@ -74,14 +75,14 @@
 
         
           
-            
-          %form{method: :post, action: "/buy/#{@item.id}", id: "buyForm"}
-            %input{type: "hidden", name: "payjp_token", value: "#{@card.id}"}
-            %input{type: "hidden", name: "status", value: "出品停止"}
+          - if current_user.has_card?              
+            %form{method: :post, action: "/buy/#{@item.id}", id: "buyForm"}
+              %input{type: "hidden", name: "payjp_token", value: "#{@card.id}"}
+              %input{type: "hidden", name: "status", value: "出品停止"}
+              .choice
+                %button.choice__end.has-card{type: "submit"}
+                  購入する
+          - else
             .choice
-              %button.choice__end{type: "submit"}
+              %button.choice__end.not-card
                 購入する
-
-
-      
-        
