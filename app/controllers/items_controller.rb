@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   def buy_check
     @item = Item.find(params[:item_id])
     @user = User.find(current_user.id)
-    redirect_to item_path(@item) if @item.sellout?
+    redirect_to item_path(@item) if @item.sellout? 
     if @user.has_card?
       card = Card.where(user_id: current_user.id).first
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
       card: params[:payjp_token],
       currency: 'jpy'
     )
-    @item.update(status_params)
+    @item.update(buy_item_params)
   end
   
   def show
@@ -70,8 +70,8 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :price, :postage, :description, :prefecture_id, :buyer_id, :brand_id, :size_id, :category_id, :condition, :shipment_day, images_attributes: [:src]).merge(seller_id: current_user.id)
   end
 
-  def status_params
-    params.permit(:status)
+  def buy_item_params
+    params.permit(:status).merge(buyer_id: current_user.id)
   end
 
 end
