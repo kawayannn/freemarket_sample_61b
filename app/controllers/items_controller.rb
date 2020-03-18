@@ -21,13 +21,15 @@ class ItemsController < ApplicationController
     Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
     card = Card.where(user_id: current_user.id).first
     customer = Payjp::Customer.retrieve(card.customer_id)
-    charge = Payjp::Charge.create(
-      amount: @item.price,
-      customer: customer,
-      card: params[:payjp_token],
-      currency: 'jpy'
-    )
-    @item.update(buy_item_params)
+    if charge = Payjp::Charge.create(
+        amount: @item.price,
+        customer: customer,
+        card: params[:payjp_token],
+        currency: 'jpy'
+      )
+      @item.update(buy_item_params)
+      redirect_to item_path(@item)
+    end
   end
   
   def show
