@@ -12,9 +12,9 @@
     .prodacuts__category
     %h2 レディース新着アイテム
     - @image.each do |image|
-      .ladies 
+      .ladies_item
       = image_tag image.to_s
-    %h2 メンズ新着アイテム
-    - @image.each do |image|
-      .mens 
-      = image_tag image.to_s
+    -# %h2 メンズ新着アイテム
+    -# - @image.each do |image|
+    -#   .mens 
+    -#   = image_tag image.to_s
