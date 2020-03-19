@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
         card: params[:payjp_token],
         currency: 'jpy'
       )
-      @item.update(buy_item_params)
+      @item.update(status: "出品停止", buyer_id: current_user.id)
       redirect_to item_path(@item)
     end
   end
