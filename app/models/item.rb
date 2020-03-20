@@ -11,7 +11,8 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images
   
-
+  validates :status, inclusion: { in: %w(出品中)}, on: :create
+  validates :status, inclusion: { in: %w(出品停止)}, if: :sellout?
   validates :name,:price, :postage, :description, :condition, :shipment_day, :prefecture_id, :seller_id, :category_id,presence: true
   validates :name, length: {maximum: 40}
   validates :description, length: {maximum: 1000}
@@ -30,6 +31,6 @@ class Item < ApplicationRecord
   end
 
   def sellout?
-    self.status == "出品停止" && self.buyer_id.present?
+    self.buyer_id.present?
   end
 end
