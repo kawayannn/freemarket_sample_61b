@@ -1,11 +1,9 @@
 class CardsController < ApplicationController
   require 'payjp'
 
-  def index
-    card = Card.where(user_id: current_user.id).first
-    if card.nil?
-      redirect_to action: "new"
-    else
+  def index    
+    if current_user.has_card?
+      card = Card.where(user_id: current_user.id).first
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
       customer = Payjp::Customer.retrieve(card.customer_id)
       @card = customer.cards.retrieve(card.card_id)
@@ -54,12 +52,9 @@ class CardsController < ApplicationController
     else
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
       customer = Payjp::Customer.retrieve(card.customer_id)
-      if customer.delete
-        card.delete
-        redirect_to action: "new"
-      else
-        redirect_to action: "index"
-      end
+      customer.delete
+      card.delete
+      redirect_to action: "index"
     end
   end
 
