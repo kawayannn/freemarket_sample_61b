@@ -29,12 +29,13 @@
               必須
             %br/
             = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可", class: "form_long"
-          .ubody__body--label
-            = f.label :password
-            %span
-              必須
-            %br/
-            = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字", class: "form_long"
+          - if @sns.nil?
+            .ubody__body--label
+              = f.label :password
+              %span
+                必須
+              %br/
+              = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字", class: "form_long"
           .ubody__body--kakunin
             %h3
               本人確認
