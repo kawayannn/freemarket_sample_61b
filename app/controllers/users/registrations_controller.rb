@@ -5,53 +5,79 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
+  #1ページ目
   def new
     @user = User.new
-    session[:provider] = session[:provider]
-    session[:uid] = session[:uid]
+    binding.pry
   end
 
   # POST /resource
-  #1ページ目
+  #1ページ目post
   def create
-    @user = User.new(sign_up_params)
+    session[:nickname] = params[:user][:nickname]
+    session[:first_name] = params[:user][:first_name]
+    session[:last_name] = params[:user][:last_name]
+    session[:first_name_kana] = params[:user][:first_name_kana]
+    session[:last_name_kana] = params[:user][:last_name_kana]
+    session[:birthday] = 20001010
+    session[:email] = params[:user][:email]
+    session[:password] = params[:user][:password]
+    @user = User.new(
+      nickname: session[:nickname],
+      first_name: session[:first_name],
+      last_name: session[:last_name],
+      first_name_kana: session[:first_name_kana],
+      last_name_kana: session[:last_name_kana],
+      birthday: session[:birthday],
+      email: session[:email],
+    )
+    #SNSで登録する場合
+    if session[:provider].present? && session[:uid].present?
+      # パスワードは自動生成する
+      password = Devise.friendly_token.first(7)
+      @user.password = password
+      session[:password] = password
+
+    #メールアドレスで登録する場合
+    else
+      @user.password = session[:password]
+      binding.pry
+    end
+    @phone = @user.build_phone
     # バリデーションチェック
     unless @user.valid?
       flash.now[:alert] = @user.errors.full_messages
       render :new and return
     end
-
-    #SNSで登録する場合
-    if session[:provider].present? && session[:uid].present?
-      # パスワードは自動生成する
-      password = Devise.friendly_token.first(7)
-      session["devise.regist_data"] = {user: @user.attributes}
-      @user.save
-      session["devise.regist_data"][:user]["password"] = password
-      params[:user][:password_confirmation] = password
-      sns = SnsCredential.create(user_id: @user.id,uid: session[:uid], provider: session[:provider])
-      @phone = @user.build_phone
-      render :new_phone
-    #メールアドレスで登録する場合
-    else
-      session["devise.regist_data"] = {user: @user.attributes}
-      session["devise.regist_data"][:user]["password"] = params[:user][:password]
-      @phone = @user.build_phone
-      render :new_phone
-    end
-    
+    render :new_phone
   end
 
-  #2ページ目
+  #2ページ目post
   def create_phone
-    @user = User.new(session["devise.regist_data"]["user"])
+    @user = User.create(
+      nickname: session[:nickname],
+      first_name: session[:first_name],
+      last_name: session[:last_name],
+      first_name_kana: session[:first_name_kana],
+      last_name_kana: session[:last_name_kana],
+      birthday: session[:birthday],
+      email: session[:email],
+      password: session[:password]
+    )
     @phone = Phone.new(phone_params)
     unless @phone.valid?
       flash.now[:alert] = @phone.errors.full_messages
       render :new_phone and return
     end
-    @user.build_phone(@phone.attributes)
-    @user.save
+    @phone.save
+    if session[:provider].present? && session[:uid].present?
+      @sns = SnsCredential.create(
+        user_id: @user.id,
+        uid: session[:uid],
+        provider: session[:provider]
+      )
+    end
+    binding.pry
     sign_in(:user, @user)
   end
 
@@ -87,7 +113,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def phone_params
-    params.require(:phone).permit(:phonenumber)
+    params.require(:phone).permit(:phonenumber).merge(user_id: @user.id)
   end
 
   # If you have extra params to permit, append them to the sanitizer.
