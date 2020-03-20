@@ -18,7 +18,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @omniauth = request.env['omniauth.auth']
     info = User.find_oauth(@omniauth)
     @user = info[:user]
-    if @user.persisted? 
+    if @user.persisted? # SNSで登録済みの場合ログイン処理
       sign_in_and_redirect @user, event: :authentication
     else 
       @sns = info[:sns]
