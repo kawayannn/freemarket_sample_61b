@@ -8,7 +8,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #1ページ目
   def new
     @user = User.new
-    binding.pry
   end
 
   # POST /resource
@@ -19,7 +18,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:last_name] = params[:user][:last_name]
     session[:first_name_kana] = params[:user][:first_name_kana]
     session[:last_name_kana] = params[:user][:last_name_kana]
-    session[:birthday] = 20001010
+    session[:birthday] = birthday_join
     session[:email] = params[:user][:email]
     session[:password] = params[:user][:password]
     @user = User.new(
@@ -41,7 +40,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     #メールアドレスで登録する場合
     else
       @user.password = session[:password]
-      binding.pry
     end
     @phone = @user.build_phone
     # バリデーションチェック
@@ -116,6 +114,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params.require(:phone).permit(:phonenumber).merge(user_id: @user.id)
   end
 
+  #birthdayのパラメータをData型として生成する。
+  def birthday_join
+    params[:user][:last_name_kana] = Date.new(
+      params[:user]["birthday(1i)"].to_i,
+      params[:user]["birthday(2i)"].to_i,
+      params[:user]["birthday(3i)"].to_i
+    )
+  end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
   #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
