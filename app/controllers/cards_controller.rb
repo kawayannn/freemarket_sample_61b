@@ -3,10 +3,9 @@ class CardsController < ApplicationController
 
   def index    
     if current_user.has_card?
-      card = Card.where(user_id: current_user.id).first
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @card = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve($card.customer_id)
+      @card = customer.cards.retrieve($card.card_id)
       card_brand = @card.brand      
       case card_brand
       when "Visa"
@@ -26,8 +25,7 @@ class CardsController < ApplicationController
   end
 
   def new
-    card = Card.where(user_id: current_user.id).first
-    redirect_to action: "index" if card.present?
+    redirect_to action: "index" if current_user.has_card?
   end
 
   def create
@@ -46,15 +44,14 @@ class CardsController < ApplicationController
   end
 
   def destroy
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
-      redirect_to action: "new"
-    else
+    if current_user.has_card?
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
-      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer = Payjp::Customer.retrieve($card.customer_id)
       customer.delete
-      card.delete
+      $card.delete
       redirect_to action: "index"
+    else
+      redirect_to action: "new"
     end
   end
 

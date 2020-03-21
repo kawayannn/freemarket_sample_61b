@@ -16,6 +16,7 @@ class User < ApplicationRecord
     validates :birthday
   end
 
+  has_one :card
   has_one :phone
 
   # あるユーザーが出品した全ての商品
@@ -28,6 +29,8 @@ class User < ApplicationRecord
   has_many :buy_items, class_name: 'Item', foreign_key: 'buyer_id'
 
   def has_card?
-    Card.where(user_id: self.id).first.present?
+    if self.card.present?
+      $card = self.card
+    end
   end
 end
