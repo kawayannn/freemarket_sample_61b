@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
   end
 
   def buy_check
-    @item = Item.find(params[:item_id])
     redirect_to item_path(@item) if @item.sellout? || @item.seller_id == current_user.id
     if current_user.has_card?
       card = Card.where(user_id: current_user.id).first
@@ -17,7 +16,6 @@ class ItemsController < ApplicationController
   end
 
   def buy
-    @item = Item.find(params[:item_id])
     redirect_to item_path(@item) if @item.sellout? || @item.seller_id == current_user.id
     Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
     card = Card.where(user_id: current_user.id).first
