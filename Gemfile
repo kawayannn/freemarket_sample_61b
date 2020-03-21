@@ -86,3 +86,7 @@ gem 'active_hash'
 gem 'ancestry'
 gem 'seed-fu', '~> 2.3'
 gem 'payjp'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
+
