@@ -36,7 +36,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       password = Devise.friendly_token.first(7)
       @user.password = password
       session[:password] = password
-
     #メールアドレスで登録する場合
     else
       @user.password = session[:password]
