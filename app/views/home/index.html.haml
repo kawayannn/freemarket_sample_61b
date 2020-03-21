@@ -8,13 +8,12 @@
       %li 家電・スマホ・カメラ
       %li おもちゃ・ホビー・グッズ
 .main
-  .prodacuts
-    .prodacuts__category
+  .items
+    .items__category-name
+    .items-main__text
     %h2 レディース新着アイテム
-    - @image.each do |image|
-      .ladies_item
-      = image_tag image.to_s
-    -# %h2 メンズ新着アイテム
-    -# - @image.each do |image|
-    -#   .mens 
-    -#   = image_tag image.to_s
+    .item-main__contenss
+
+    - @lady_item.each do |lady_item|
+      .lady_item
+      = image_tag item.lady_item    

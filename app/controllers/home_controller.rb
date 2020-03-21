@@ -5,10 +5,11 @@ class HomeController < ApplicationController
   end
 
   def index
-    @image = Image.order('src ASC').limit(10)
-    @item = Item.order('price ASC').limit(10)
-    @ladies_item = Item.where(category_id:).limit(10)
+    @lady_item = Item.where(category_id:1).order(category_id: 'DESC').limit(16)
+    # @man_item = Item.where(category_id:2).order(:id 'DESC').limit(10)
+    # @category= Category.all
   end
 
+  
  
 end
