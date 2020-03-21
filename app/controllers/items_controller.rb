@@ -8,18 +8,16 @@ class ItemsController < ApplicationController
   def buy_check
     redirect_to item_path(@item) if @item.sellout? || @item.seller_id == current_user.id
     if current_user.has_card?
-      card = Card.where(user_id: current_user.id).first
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
-      @customer = Payjp::Customer.retrieve(card.customer_id)
-      @card = @customer.cards.retrieve(card.card_id)
+      @customer = Payjp::Customer.retrieve($card.customer_id)
+      @card = @customer.cards.retrieve($card.card_id)
     end
   end
 
   def buy
     redirect_to item_path(@item) if @item.sellout? || @item.seller_id == current_user.id
     Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
-    card = Card.where(user_id: current_user.id).first
-    customer = Payjp::Customer.retrieve(card.customer_id)
+    customer = Payjp::Customer.retrieve($card.customer_id)
     if charge = Payjp::Charge.create(
         amount: @item.price,
         customer: customer,
