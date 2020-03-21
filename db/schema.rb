@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_09_052355) do
+ActiveRecord::Schema.define(version: 2020_02_28_105544) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "zip_code", null: false
@@ -49,6 +49,37 @@ ActiveRecord::Schema.define(version: 2020_03_09_052355) do
     t.bigint "size_id"
     t.index ["ancestry"], name: "index_categories_on_ancestry"
     t.index ["size_id"], name: "index_categories_on_size_id"
+  end
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "src"
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id"
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.integer "postage", null: false
+    t.text "description", null: false
+    t.integer "condition", null: false
+    t.integer "shipment_day", null: false
+    t.integer "status", default: 0, null: false
+    t.integer "prefecture_id", null: false
+    t.bigint "seller_id", null: false
+    t.bigint "buyer_id"
+    t.bigint "brand_id"
+    t.bigint "size_id"
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["seller_id"], name: "index_items_on_seller_id"
+    t.index ["size_id"], name: "index_items_on_size_id"
   end
 
   create_table "phones", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -100,4 +131,10 @@ ActiveRecord::Schema.define(version: 2020_03_09_052355) do
   add_foreign_key "brand_categories", "categories"
   add_foreign_key "categories", "sizes"
   add_foreign_key "sns_credentials", "users"
+  add_foreign_key "images", "items"
+  add_foreign_key "items", "brands"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "sizes"
+  add_foreign_key "items", "users", column: "buyer_id"
+  add_foreign_key "items", "users", column: "seller_id"
 end

@@ -21,6 +21,9 @@ body{
 }
 
 .new-main{
+  &__content{
+    text-align: center;
+  }
   &__upload-box{
     display: flex;
     box-sizing: border-box;
