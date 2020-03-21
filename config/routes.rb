@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get '/mypage/:user_id' => 'users#mypage', as: 'mypage'
   get '/buy_check/:user_id' => 'items#buy_check', as: 'buy_check'
 
-  resources :items, only:[:show,:new, :create] do
+  resources :items, only:[:show,:new, :create,:edit,:update] do
+
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }

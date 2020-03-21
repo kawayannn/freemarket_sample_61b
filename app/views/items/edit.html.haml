@@ -1,0 +1,101 @@
+.new_container
+ = form_for @item do |f|  
+  %main.new_main
+  .new-main__upload-box
+  .new-main__upload_head
+  .new-main__from-group
+   .entry
+    出品画像
+    .new-main__form-require 必須
+  .new-main__upload_sub-head 最大10枚までアップロードできます。
+  
+  = f.fields_for :images do |i|
+   = i.label :src do
+    = i.file_field :src,{class:"new-main__input__upload-image"}
+    .new-main__upload_function
+     .new-main__upload_function-icon
+      = image_tag "item-function.png",size:"24x24"
+      %p.new-main__upload_function-guide
+      ドロップアンドドラッグ
+      %br またはクリックしてダウンロード
+     .new-main__upload-item-container
+     .new-main__content
+      
+   .new-main__upload-item-container
+   .new-main__content
+  .new-main__from-group
+   .entry
+    商品名
+    .new-main__form-require 必須
+   = f.text_field :name, class: "new-main__input__product--name", placeholder:"　40文字まで"
+   .new-main__from-group
+   .entry
+    商品の説明
+    .new-main__form-require 必須
+   = f.text_area :description, placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。",class:"new-main__input__product--description"
+   .new-main__input__product--word-count 1/1000
+   .new-main__input__product--promt 入力してください
+
+  .new-main__product-details
+   .new-main__sub_head 商品の詳細
+
+   .new-main__from-group
+    .entry
+     カテゴリー
+     .new-main__form-require 必須
+   #categories-select-box
+    -# = select :category_1,:category_1, options_from_collection_for_select(@categories, :id, :name),{prompt: "選択してください"}, {class: 'new-main__select__product--categories', id: "parent_category"}
+   .new-main__from-group
+    .entry
+     ブランド
+     .new-main__form-arbitrary 任意
+   %input{type:"text", placeholder:"　例））シャネル",autocomplete:"off",class:"new-main__input__product--name", id: "brand-search-field"}
+   %ul#brand-search-result
+   .new-main__from-group
+    .entry
+     商品の状態
+     .new-main__form-require 必須
+   = f.select :condition, options_for_select(Item.conditions.keys.to_a), {prompt: "選択してください"}, {class: "new-main__select__product--categories"}
+
+  .new-main__send
+   .new-main__send_head 配送について
+
+  .new-main__from-group
+   .entry
+    配送料の負担
+    .new-main__form-require 必須
+  = f.select :postage, options_for_select(Item.postages.keys.to_a), {prompt: "選択してください"}, {class: "new-main__select__product--categories"}
+
+  .new-main__from-group
+   .entry
+    発送元の地域
+    .new-main__form-require 必須
+  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "選択してください"}, {class: 'new-main__select__product--categories'}
+
+  .new-main__from-group
+   .entry
+    発送までの日数
+    .new-main__form-require 必須
+  = f.select :shipment_day, options_for_select(Item.shipment_days.keys.to_a), {prompt: "選択してください"}, {class: "new-main__select__product--categories"}
+
+  .new-main__sub_head 
+   価格(¥300~9,999,999)
+
+  .new-main__selling-price
+   販売価格
+   .new-main__selling-price__form-require 必須
+  = f.number_field :price, class: "new-main__selling-price__number", placeholder:"0"
+  .new-main__selling-price__unit¥
+
+  .new-main__from-group__fee-value
+   販売手数料(10%)
+   %span.new-main__from-group__fee-label 
+   ー
+  .new-main__from-group__total-value
+   販売利益
+   %span.new-main__from-group__total-label
+   ー
+
+  .new-main__content.new-main__btn-box
+   = f.submit "変更する", class: "new-main__button-exhibition"
+   .new-main__button-return もどる

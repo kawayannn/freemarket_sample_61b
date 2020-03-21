@@ -12,6 +12,22 @@ class ItemsController < ApplicationController
     @user = User.find(@item.seller_id)
   end
   
+  def edit
+    @item = Item.find(params[:id])
+    @category = Category.find(@item.category_id)
+    # @categories = Category.find(1,2,3)
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    # @item.update(item_params)
+    if @item.update(new_item_params)
+      redirect_to item_path(@item.id)
+    else
+      render :edit
+    end
+  end
+  
   def new
     @item = Item.new
     @item.images.new
