@@ -15,9 +15,12 @@
             = image_tag "logo.png"
             .right
               %p.buy-panel__item-detail-inner__name
-                item-nameだっっっよおおおおおおだっっっよおおおおおおおおおおお
+                = @item.name
               %p.buy-panel__item-detail-inner__fee
-                ¥20000送料込み
+                - if @item.postage == "着払い(購入者負担)" 
+                  = "¥#{@item.price} +送料"
+                - elsif @item.postage == "送料込み(出品者負担)"
+                  = "¥#{@item.price}送料込み"
 
 
       
@@ -30,7 +33,7 @@
                 支払い金額
 
               %p.message__yu
-                ¥20,000
+                = "¥#{@item.price}"
 
 
             .lower
@@ -44,12 +47,20 @@
                 %p.coo__pay--way
                   支払い方法
                 .tea
-                  %p.tea__pointt
-                    %i{class: "fa fa-plus-circle icons"}
-                  
+                  - if current_user.has_card?              
+                    %p.card_info
+                      クレジットカード
+                      %br
+                      = "************#{@card.last4}"
+                      %br
+                      = "#{sprintf("%02d", @card.exp_month)}/#{@card.exp_year % 100}"
 
-                  %p.tea__user
-                    登録してください
+                  - else
+                    %p.tea__pointt
+                      %i{class: "fa fa-plus-circle icons"}
+                    = link_to new_card_path do
+                      %p.tea__user
+                        登録してください
               
           .to
             .to__grand
@@ -64,12 +75,13 @@
 
         
           
-            
-
-          .choice
-            .choice__end
-              購入する
-
-
-      
-        
+          - if current_user.has_card?              
+            %form{method: :post, action: "/buy/#{@item.id}", id: "buyForm"}
+              %input{type: "hidden", name: "payjp_token", value: "#{@card.id}"}
+              .choice
+                %button.choice__end.has-card{type: "submit"}
+                  購入する
+          - else
+            .choice
+              %button.choice__end.not-card
+                購入する

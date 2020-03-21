@@ -5,6 +5,7 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable,
           :omniauthable, omniauth_providers: %i[facebook google_oauth2]
 
+  has_one :card
   has_one :phone
   has_many :sns_credentials, dependent: :destroy
 
@@ -69,7 +70,6 @@ class User < ApplicationRecord
     return { user: user ,sns: sns}
   end
 
-  has_one :phone
 
   # あるユーザーが出品した全ての商品
   has_many :sell_items, class_name: 'Item', foreign_key: 'seller_id', dependent: :destroy
@@ -79,4 +79,10 @@ class User < ApplicationRecord
   has_many :salling_items, -> { where("buyer_id is NULL")}, class_name: "Item", foreign_key: 'seller_id'
   # あるユーザーが購入した商品
   has_many :buy_items, class_name: 'Item', foreign_key: 'buyer_id'
+
+  def has_card?
+    if self.card.present?
+      $card = self.card
+    end
+  end
 end

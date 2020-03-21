@@ -1,6 +1,3 @@
 .main-contents
   = render "shared/side-list"
-  - if true
-    = render "card-list"
-  - elsif false
-    = render "card-add"
+  = render 'card-add'
