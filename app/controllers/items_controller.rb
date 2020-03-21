@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:buy_check, :buy]
   require 'payjp'
 
   def index
@@ -73,6 +74,10 @@ class ItemsController < ApplicationController
 
   def buy_item_params
     params.permit(:status).merge(buyer_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 
 end
