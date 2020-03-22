@@ -11,9 +11,13 @@
   .items
     .items__category-name
     .items-main__text
-    %h2 レディース新着アイテム
     .item-main__contenss
-
+    %h2 レディース新着アイテム
     - @lady_item.each do |lady_item|
       .lady_item
-      = image_tag item.lady_item    
+      = image_tag @lady_item.to_s
+      
+    %h2 メンズ新着アイテム
+    - @man_item.each do |man_item|
+      .man_item
+      = image_tag @lady_item.to_s
