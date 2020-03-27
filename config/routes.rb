@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/buy_check/:item_id' => 'items#buy_check', as: 'buy_check'
   post '/buy/:item_id' => 'items#buy', as: 'buy'
 
-  resources :items, only:[:show,:new, :create] do
+  resources :items, only:[:show,:new, :create, :destroy] do
 
     collection do
       get 'get_category_children', defaults: { format: 'json' }

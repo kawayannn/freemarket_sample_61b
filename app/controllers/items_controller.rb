@@ -63,6 +63,15 @@ class ItemsController < ApplicationController
     @item = Item.create(new_item_params)
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    if @item.delete
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
+
   private
   def new_item_params
     params.require(:item).permit(:name, :price, :postage, :description, :prefecture_id, :buyer_id, :brand_id, :size_id, :category_id, :condition, :shipment_day, images_attributes: [:src]).merge(seller_id: current_user.id)
