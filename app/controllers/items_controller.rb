@@ -1,9 +1,32 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:buy_check, :buy]
+  require 'payjp'
 
   def index
   end
 
   def buy_check
+    redirect_to item_path(@item) if @item.sellout? || @item.seller_id == current_user.id
+    if current_user.has_card?
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
+      @customer = Payjp::Customer.retrieve($card.customer_id)
+      @card = @customer.cards.retrieve($card.card_id)
+    end
+  end
+
+  def buy
+    redirect_to item_path(@item) if @item.sellout? || @item.seller_id == current_user.id
+    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
+    customer = Payjp::Customer.retrieve($card.customer_id)
+    if charge = Payjp::Charge.create(
+        amount: @item.price,
+        customer: customer,
+        card: params[:payjp_token],
+        currency: 'jpy'
+      )
+      @item.update(status: "出品停止", buyer_id: current_user.id)
+      redirect_to item_path(@item)
+    end
   end
   
   def show
@@ -59,6 +82,14 @@ class ItemsController < ApplicationController
   private
   def new_item_params
     params.require(:item).permit(:name, :price, :postage, :description, :prefecture_id, :buyer_id, :brand_id, :size_id, :category_id, :condition, :shipment_day, images_attributes: [:src]).merge(seller_id: current_user.id)
+  end
+
+  def buy_item_params
+    params.permit(:status).merge(buyer_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 
 end

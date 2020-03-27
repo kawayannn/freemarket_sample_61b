@@ -1,6 +1,5 @@
+- breadcrumb :conform_card
+= breadcrumbs pretext: "",separator: " &rsaquo; "
 .main-contents
   = render "shared/side-list"
-  - if true
-    = render "card-list"
-  - elsif false
-    = render "card-add"
+  = render "cards/card-add"

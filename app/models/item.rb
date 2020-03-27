@@ -11,7 +11,8 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images
   
-
+  validates :status, inclusion: { in: %w(出品中)}, on: :create
+  validates :status, inclusion: { in: %w(出品停止)}, if: :sellout?
   validates :name,:price, :postage, :description, :condition, :shipment_day, :prefecture_id, :seller_id, :category_id,presence: true
   validates :name, length: {maximum: 40}
   validates :description, length: {maximum: 1000}
@@ -20,10 +21,16 @@ class Item < ApplicationRecord
     validates :price
   end
 
-
-
   enum condition:{"新品、未使用": 0, "未使用に近い": 1}
   enum postage:{"送料込み(出品者負担)": 0, "着払い(購入者負担)": 1}
   enum shipment_day:{"1~2日で発送": 0, "3~4日で発送": 1, "5~6日で発送": 2}
   enum status:{"出品中": 0, "取引中": 1, "出品停止": 2}
+
+  def on_display?
+    self.status == "出品中" && self.buyer_id.blank?
+  end
+
+  def sellout?
+    self.buyer_id.present?
+  end
 end

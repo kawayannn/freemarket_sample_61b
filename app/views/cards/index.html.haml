@@ -1,0 +1,26 @@
+.main-contents
+  = render "shared/side-list"
+  - if current_user.has_card?
+    .single-inner
+      %h2.single-inner__head
+        支払い方法
+      .single-inner__cards
+        %h3.single-inner__cards--uper
+          クレジットカード一覧
+        %ul.single-inner__cards--lists
+          %li.card
+            %form.card__form
+              = image_tag @card_src, height: '20', width: '34'
+              .card__form--card-num
+                = "************#{@card.last4}"
+              .card__form--expiration
+                = "#{sprintf("%02d", @card.exp_month)}/#{@card.exp_year % 100}"
+              = link_to card_path(@card), method: :delete do
+                %button.card__form--delete-btn
+                  削除する
+        .single-inner__cards--foot
+          = link_to "#" do
+            支払い方法について
+            = icon('fas', 'angle-right')
+  - else
+    = render 'card-add'  

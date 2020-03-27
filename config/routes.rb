@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   get '/conform_card/:user_id' => 'users#conform_card', as: 'conform_card'
   get '/edit_profile/:user_id' => 'users#edit_profile', as: 'edit_profile'
   get '/mypage/:user_id' => 'users#mypage', as: 'mypage'
-  get '/buy_check/:user_id' => 'items#buy_check', as: 'buy_check'
+  get '/buy_check/:item_id' => 'items#buy_check', as: 'buy_check'
+  post '/buy/:item_id' => 'items#buy', as: 'buy'
+
 
   resources :items, only:[:show,:new, :create,:edit,:update] do
+
 
     collection do
       get 'get_category_children', defaults: { format: 'json' }
@@ -20,11 +23,13 @@ Rails.application.routes.draw do
     end
   end
 
-
+  resources :cards, only:[:index, :new, :create, :destroy]  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   devise_for :users, controllers: {
-    registrations: 'users/registrations',
+    sessions: 'users/sessions',
+    registrations: "users/registrations",
+    omniauth_callbacks: 'users/omniauth_callbacks'
   }
   devise_scope :user do
     get 'phones', to: 'users/registrations#new_phone'

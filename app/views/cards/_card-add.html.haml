@@ -5,7 +5,7 @@
     %h3.single-inner__cards--uper
       クレジットカード一覧
     .card.add-card-content
-      = link_to "#", class: "btn add-card-btn btn-red btn-default" do
+      = link_to new_card_path, method: :get, class: "btn add-card-btn btn-red btn-default" do
         = icon('fas', 'credit-card')
         クレジットカードを追加する
     .single-inner__cards--foot

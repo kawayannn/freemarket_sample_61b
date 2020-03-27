@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
   def conform_user
   end
 
