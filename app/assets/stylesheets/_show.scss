@@ -149,6 +149,32 @@
 
   }
 }
+.go-deletion{
+  display: table;
+  margin-top: 16px;
+  width: 100%;
+  font-weight: 600;
+  > a{
+    line-height: 60px;
+    text-decoration: none;
+    color: white;
+    background-color: #e3e3e6;
+    margin: 0 auto;
+    font-size: 24px;
+    text-align: center;
+    padding-top: auto;
+    display: table-cell;
+    vertical-align: middle;
+    transition: all .3s;
+  }
+  > a:hover{
+    background-color: #e3e3e6;
+    transition: all .3s;
+  }
+  > a:click{
+
+  }
+}
 
 .show-item-description{
   word-wrap: break-word;

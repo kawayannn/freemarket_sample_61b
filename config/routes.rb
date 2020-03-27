@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/mypage/:user_id' => 'users#mypage', as: 'mypage'
   get '/buy_check/:item_id' => 'items#buy_check', as: 'buy_check'
   post '/buy/:item_id' => 'items#buy', as: 'buy'
+  post 'items/:id/destroy' => 'items#destroy'
 
   resources :items, only:[:show,:new, :create] do
 
