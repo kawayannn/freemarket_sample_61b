@@ -60,7 +60,12 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.create(new_item_params)
+    @item = Item.new(new_item_params)
+    if @item.save
+      redirect_to item_path(@item)
+    else
+      redirect_to new_item_path
+    end
   end
 
   def destroy
@@ -74,7 +79,7 @@ class ItemsController < ApplicationController
 
   private
   def new_item_params
-    params.require(:item).permit(:name, :price, :postage, :description, :prefecture_id, :buyer_id, :brand_id, :size_id, :category_id, :condition, :shipment_day, images_attributes:  [:src]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :price, :postage, :description, :prefecture_id, :buyer_id, :brand_id, :size_id, :category_id, :condition, :shipment_day, images_attributes:[:src]).merge(seller_id: current_user.id)
   end
 
   def buy_item_params

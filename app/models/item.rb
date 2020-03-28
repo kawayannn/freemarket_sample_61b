@@ -16,8 +16,13 @@ class Item < ApplicationRecord
   validates :name, length: {maximum: 40}
   validates :description, length: {maximum: 1000}
   validates :price, numericality: {only_integer: true,greater_than: 300, less_than_or_equal_to: 9999999}
+  validate :no_img_error
   with_options format: {with: /\A[0-9]+\z/} do
     validates :price
+  end
+
+  def no_img_error
+    errors.add(:images, "画像なしでは掲載できません") if images.size < 1
   end
 
   enum condition:{"新品、未使用": 0, "未使用に近い": 1}
