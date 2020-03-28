@@ -8,82 +8,76 @@
       %li 家電・スマホ・カメラ
       %li おもちゃ・ホビー・グッズ
 .main
-  .items
-    .items__category-name
-    .items-main__text
-    .item-main__contenss
-    - @categories.each do |category|
-      %h2 
-        #{category.name}新着アイテム
-      - Item.where(category_id: category.subtree).each do |item|
-        .item_name
-          = item.name
-        .item_price
-          = item.price
-        .item_image
-          = image_tag item.images.first.src.url
+  .prodacuts
+    .prodacuts__category
+      - @categories.each do |category|
+        %h2 
+          #{category.name}新着アイテム
+        = link_to "" do
+          もっと見る
+          %i.fa.fa-chevron-righ
+        - Item.where(category_id: category.subtree).each do |item|
+          .prodacuts__cards
+            = image_tag item.images.first.src.url
+            = item.name
+            = item.price
 
-    -# %h2 メンズ新着アイテム
-    -# - @man_item.each do |man_item|
-    -#   = man_item.name
-    -#   = image_tag images.src 
-
--# .main
--#   .prodacuts
--#     .prodacuts__category
--#       %h2 新着アイテム
--#       = link_to "" do
--#         もっと見る
--#         %i.fa.fa-chevron-right
--#     .prodacuts__cards
--#       %ul.prodacuts__cards-block
--#         %li.prodacuts__cards-item
--#           = link_to "", class: "prodacuts__cards-link" do
--#             .prodacuts__cards-content
--#               = image_tag "image.jpg"
--#               %p testitemttttttttttttttttttttt
--#         %li.prodacuts__cards-item
--#           = link_to "", class: "prodacuts__cards-link" do
--#             .prodacuts__cards-content
--#               = image_tag "image.jpg"
--#               %p testitemttttttttttttttttttttt
--#         %li.prodacuts__cards-item
--#           = link_to "", class: "prodacuts__cards-link" do
--#             .prodacuts__cards-content
--#               = image_tag "image.jpg"
--#               %p testitemttttttttttttttttttttt
--#         %li.prodacuts__cards-item
--#           = link_to "", class: "prodacuts__cards-link" do
--#             .prodacuts__cards-content
--#               = image_tag "image.jpg"
--#               %p testitemttttttttttttttttttttt
--#         %li.prodacuts__cards-item
--#           = link_to "", class: "prodacuts__cards-link" do
--#             .prodacuts__cards-content
--#               = image_tag "image.jpg"
--#               %p testitemttttttttttttttttttttt
--#         %li.prodacuts__cards-item
--#           = link_to "", class: "prodacuts__cards-link" do
--#             .prodacuts__cards-content
--#               = image_tag "image.jpg"
--#               %p testitemttttttttttttttttttttt
--#         %li.prodacuts__cards-item
--#           = link_to "", class: "prodacuts__cards-link" do
--#             .prodacuts__cards-content
--#               = image_tag "image.jpg"
--#               %p testitemttttttttttttttttttttt
--#         %li.prodacuts__cards-item
--#           = link_to "", class: "prodacuts__cards-link" do
--#             .prodacuts__cards-content
--#               = image_tag "image.jpg"
--#               %p testitemttttttttttttttttttttt
--#         %li.prodacuts__cards-item
--#           = link_to "", class: "prodacuts__cards-link" do
--#             .prodacuts__cards-content
--#               = image_tag "image.jpg"
--#               %p testitemttttttttttttttttttttt
--#         %li.prodacuts__cards-item
--#           = link_to "", class: "prodacuts__cards-link" do
--#             .prodacuts__cards-content
--#               = image_tag "image.jpg"
--#               %p testitemttttttttttttttttttttt
+.main
+  .prodacuts
+    .prodacuts__category
+      %h2 新着アイテム
+      = link_to "" do
+        もっと見る
+        %i.fa.fa-chevron-right
+    .prodacuts__cards
+      %ul.prodacuts__cards-block
+        %li.prodacuts__cards-item
+          = link_to "", class: "prodacuts__cards-link" do
+            .prodacuts__cards-content
+              = image_tag "image.jpg"
+              %p testitemttttttttttttttttttttt
+        -# %li.prodacuts__cards-item
+        -#   = link_to "", class: "prodacuts__cards-link" do
+        -#     .prodacuts__cards-content
+        -#       = image_tag "image.jpg"
+        -#       %p testitemttttttttttttttttttttt
+        -# %li.prodacuts__cards-item
+        -#   = link_to "", class: "prodacuts__cards-link" do
+        -#     .prodacuts__cards-content
+        -#       = image_tag "image.jpg"
+        -#       %p testitemttttttttttttttttttttt
+        -# %li.prodacuts__cards-item
+        -#   = link_to "", class: "prodacuts__cards-link" do
+        -#     .prodacuts__cards-content
+        -#       = image_tag "image.jpg"
+        -#       %p testitemttttttttttttttttttttt
+        -# %li.prodacuts__cards-item
+        -#   = link_to "", class: "prodacuts__cards-link" do
+        -#     .prodacuts__cards-content
+        -#       = image_tag "image.jpg"
+        -#       %p testitemttttttttttttttttttttt
+        -# %li.prodacuts__cards-item
+        -#   = link_to "", class: "prodacuts__cards-link" do
+        -#     .prodacuts__cards-content
+        -#       = image_tag "image.jpg"
+        -#       %p testitemttttttttttttttttttttt
+        -# %li.prodacuts__cards-item
+        -#   = link_to "", class: "prodacuts__cards-link" do
+        -#     .prodacuts__cards-content
+        -#       = image_tag "image.jpg"
+        -#       %p testitemttttttttttttttttttttt
+        -# %li.prodacuts__cards-item
+        -#   = link_to "", class: "prodacuts__cards-link" do
+        -#     .prodacuts__cards-content
+        -#       = image_tag "image.jpg"
+        -#       %p testitemttttttttttttttttttttt
+        -# %li.prodacuts__cards-item
+        -#   = link_to "", class: "prodacuts__cards-link" do
+        -#     .prodacuts__cards-content
+        -#       = image_tag "image.jpg"
+        -#       %p testitemttttttttttttttttttttt
+        -# %li.prodacuts__cards-item
+        -#   = link_to "", class: "prodacuts__cards-link" do
+        -#     .prodacuts__cards-content
+        -#       = image_tag "image.jpg"
+        -#       %p testitemttttttttttttttttttttt

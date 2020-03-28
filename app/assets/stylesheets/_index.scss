@@ -30,7 +30,7 @@
   padding: 42px 210px 100px;
 }
 
-.items{
+.prodacuts{
   &__category{
     margin-bottom: 16px;
     > h2{
@@ -48,7 +48,8 @@
     }
   }
   &__cards{
-    height: 544px;
+    // height: 544px;
+    // float: left;
     &-block{
       height: 100%;
     }
@@ -73,6 +74,7 @@
       }
       > p{
         padding: 10px;
+        float: left;
         word-wrap: break-word;
         color: black;
       }
