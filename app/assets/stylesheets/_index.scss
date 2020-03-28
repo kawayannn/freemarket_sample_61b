@@ -49,11 +49,13 @@
   }
   &__cards{
     display:table-cell;
+    padding: 5px;
     &-item{
       height: 50%;
-      width: 20%;
-      padding: 10px;
+      width: 100%;
+      padding-bottom: 5px;
       position: relative;
+      background-color: white;
     }
     &-link{
       text-decoration: none;
@@ -61,7 +63,6 @@
     &-content{
       height: 100%;
       width: 180px;
-      background-color: white;
       box-shadow: 1px 1px 3px gray;
       > img{
         height: 188px;
@@ -74,6 +75,12 @@
         word-wrap: break-word;
         color: black;
       }
+    }
+    &-name{
+      width: 180px;
+    }
+    &-price{
+      width: 180px;
     }
   }
 }
