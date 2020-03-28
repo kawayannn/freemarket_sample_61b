@@ -18,24 +18,26 @@
           %i.fa.fa-chevron-righ
         - Item.where(category_id: category.subtree).each do |item|
           .prodacuts__cards
-            = image_tag item.images.first.src.url
-            = item.name
-            = item.price
-
-.main
-  .prodacuts
-    .prodacuts__category
-      %h2 新着アイテム
-      = link_to "" do
-        もっと見る
-        %i.fa.fa-chevron-right
-    .prodacuts__cards
-      %ul.prodacuts__cards-block
-        %li.prodacuts__cards-item
-          = link_to "", class: "prodacuts__cards-link" do
-            .prodacuts__cards-content
-              = image_tag "image.jpg"
-              %p testitemttttttttttttttttttttt
+            .prodacuts__cards-item
+              .prodacuts__cards-content
+                = image_tag item.images.first.src.url
+                = item.name
+                = item.price
+            -# = item.
+-# .main
+-#   .prodacuts
+-#     .prodacuts__category
+-#       %h2 新着アイテム
+-#       = link_to "" do
+-#         もっと見る
+-#         %i.fa.fa-chevron-right
+-#     .prodacuts__cards
+-#       %ul.prodacuts__cards-block
+-#         %li.prodacuts__cards-item
+-#           = link_to "", class: "prodacuts__cards-link" do
+-#             .prodacuts__cards-content
+-#               = image_tag "image.jpg"
+-#               %p testitemttttttttttttttttttttt
         -# %li.prodacuts__cards-item
         -#   = link_to "", class: "prodacuts__cards-link" do
         -#     .prodacuts__cards-content
