@@ -1,15 +1,14 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
-  belongs_to :seller, class_name: "User", dependent: :destroy
+  belongs_to :seller, class_name: "User"
   belongs_to :buyer, class_name: "User"
   belongs_to :brand
   belongs_to :size
   belongs_to :category
-  has_many :comments, dependent: :destroy
-  has_many :likes, dependent: :destroy
+  has_many :likes
   has_many :images, dependent: :destroy
-  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :images, allow_destroy: true
   
   validates :status, inclusion: { in: %w(出品中)}, on: :create
   validates :status, inclusion: { in: %w(出品停止)}, if: :sellout?
