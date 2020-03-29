@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:buy_check, :buy]
+  before_action :set_edit_item, only: [:edit,:update,:show]
   require 'payjp'
 
   def index
@@ -30,9 +31,25 @@ class ItemsController < ApplicationController
   end
   
   def show
-    @item = Item.find(params[:id])
+    
     @category = Category.find(@item.category_id)
     @user = User.find(@item.seller_id)
+  end
+  
+  def edit
+   
+    @categories = Category.find(1,2,3)
+    @grandchild_category = Category.find(@item.category_id)
+    @prefectures = Prefecture.all
+  end
+
+  def update
+    
+    if @item.update(new_item_params)
+      redirect_to item_path(@item.id)
+    else
+      render :edit
+    end
   end
   
   def new
@@ -89,5 +106,8 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:item_id])
   end
-
+  
+  def set_edit_item
+    @item = Item.find(params[:id])
+  end
 end
