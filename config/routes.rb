@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   post '/buy/:item_id' => 'items#buy', as: 'buy'
 
 
-  resources :items, only:[:show,:new, :create,:edit,:update] do
+
+  resources :items, only:[:show,:new, :create,:edit,:update,:destroy] do
+
+
 
 
     collection do

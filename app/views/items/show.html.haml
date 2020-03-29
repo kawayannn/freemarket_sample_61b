@@ -4,13 +4,10 @@
       = @item.name
     .show-contents
       .images
-        = image_tag "ifon.png", class: "images__main"
+        = image_tag @item.images.first.src.url, class: "images__main"
         %p.images__smn{id: 'thumbs'}
-          = image_tag "ifon.png", class: "images__smn-sub"
-          = image_tag "logo.png", class: "images__smn-sub"
-          = image_tag "apple.png", class: "images__smn-sub"
-          = image_tag "ifon.png", class: "images__smn-sub"
-          = image_tag "ifon.png", class: "images__smn-sub"
+          - @item.images.each do |image|
+            = image_tag image.src.url, class: "images__smn-sub"
       %table.show-table
         %tr.show-table__user
           %th 
@@ -74,7 +71,10 @@
           購入画面に進む
     - elsif @item.sellout?
       %h1.go-purchase.sellout_message
-        売り切れました      
+        売り切れました     
+    -if @item.seller_id == current_user.id
+      .go-deletion
+        = link_to '商品を削除します',"/items/#{@item.id}", method: :delete, data: {confirm: "本当に削除しますか？"}
     %p.show-item-description
       =@item.description
     .show-item-btns
