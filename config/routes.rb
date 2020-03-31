@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :items, only:[:show,:new, :create,:index] do
 
     collection do
       get 'get_category_children', defaults: { format: 'json' }
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
       get 'get_brand', defaults: { format: 'json' }
       get 'get_size', defaults: { format: 'json' }
     end
+
   end
 
   resources :cards, only:[:index, :new, :create, :destroy]  
