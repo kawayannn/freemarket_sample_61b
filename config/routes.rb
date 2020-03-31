@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/edit_profile/:user_id' => 'users#edit_profile', as: 'edit_profile'
   get '/mypage/:user_id' => 'users#mypage', as: 'mypage'
 
-  resources :items, only:[:show,:new, :create,:buy_check,:index] do
+  resources :items, only:[:show,:new, :create,:index] do
 
     collection do
       get 'get_category_children', defaults: { format: 'json' }
