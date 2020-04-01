@@ -13,31 +13,32 @@ Rails.application.routes.draw do
 
 
 
-  resources :items, only:[:show,:new, :create,:edit,:update,:destroy] do
+    resources :items, only:[:show,:new, :create,:edit,:update,:destroy] do
 
 
 
-  resources :items, only:[:show,:new, :create,:index] do
+    resources :items, only:[:show,:new, :create,:index] do
 
-    collection do
-      get 'get_category_children', defaults: { format: 'json' }
-      get 'get_category_grandchildren', defaults: { format: 'json' }
-      get 'get_brand', defaults: { format: 'json' }
-      get 'get_size', defaults: { format: 'json' }
+      collection do
+        get 'get_category_children', defaults: { format: 'json' }
+        get 'get_category_grandchildren', defaults: { format: 'json' }
+        get 'get_brand', defaults: { format: 'json' }
+        get 'get_size', defaults: { format: 'json' }
+      end
+
     end
 
-  end
+    resources :cards, only:[:index, :new, :create, :destroy]  
+    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :cards, only:[:index, :new, :create, :destroy]  
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    registrations: "users/registrations",
-    omniauth_callbacks: 'users/omniauth_callbacks'
-  }
-  devise_scope :user do
-    get 'phones', to: 'users/registrations#new_phone'
-    post 'phones', to: 'users/registrations#create_phone'
+    devise_for :users, controllers: {
+      sessions: 'users/sessions',
+      registrations: "users/registrations",
+      omniauth_callbacks: 'users/omniauth_callbacks'
+    }
+    devise_scope :user do
+      get 'phones', to: 'users/registrations#new_phone'
+      post 'phones', to: 'users/registrations#create_phone'
+    end
   end
 end
