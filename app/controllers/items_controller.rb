@@ -31,7 +31,6 @@ class ItemsController < ApplicationController
   end
   
   def show
-    
     @category = Category.find(@item.category_id)
     @user = User.find(@item.seller_id)
   end
