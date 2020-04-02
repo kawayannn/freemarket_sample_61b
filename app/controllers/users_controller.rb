@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def mypage
+    @user = User.find(params[id: current_user.id])
   end
 
   def registrations

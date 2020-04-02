@@ -2,7 +2,7 @@
   .side-list__top
     %ul.list-links
       %li.list-links__link
-        = link_to "" do
+        = link_to mypage_path(current_user.id) do
           マイページ
           %i.fa.fa-chevron-right
       %li.list-links__link
