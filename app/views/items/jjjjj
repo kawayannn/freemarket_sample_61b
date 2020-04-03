@@ -1,0 +1,37 @@
+<div id="categories-select-box">
+<select class="new-main__select__product--categories" id="parent_category" name="category_1[category_1]"><option value="">選択してください</option>
+<option value="1">レディース</option>
+<option value="2">メンズ</option>
+<option value="3">ベビー・キッズ</option></select>
+
+                          
+                        
+                                
+                              
+                        
+                      
+                        
+                      
+                          
+                        
+                                
+                              
+                        
+                      
+                          
+                        
+                          <select class="listing-select-wrapper__box--select new-main__select__product--categories" id="child_category">
+                            <option value="---" data-category="">選択してください</option>
+                            <option value="8" data-category="8">おもちゃ</option><option value="9" data-category="9">キッズ靴</option>
+                          </select>
+                        
+                                <select class="listing-select-wrapper__box--select new-main__select__product--categories" id="grandchild_category" name="item[category_id]">
+                                  <option value="" data-category="選択してください">---</option>
+                                  <option value="24" data-category="24">おふろのおもちゃ</option><option value="25" data-category="25">ガラガラ</option><option value="26" data-category="26">その他</option>
+                                </select>
+                              </div>
+<select class="listing-select-wrapper__box--select new-main__select__product--categories" id="size" name="item[size_id]">
+                          <option value="---" data-category="">選択してください</option>
+                          <option value="3" data-category="3">S</option><option value="4" data-category="4">M</option><option value="5" data-category="5">L</option><option value="6" data-category="6">FREE SIZE</option>
+                        </select>
+
