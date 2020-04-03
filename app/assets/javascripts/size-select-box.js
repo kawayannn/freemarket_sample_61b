@@ -21,7 +21,7 @@ $(document).on('turbolinks:load', function(){
     if (grandchildCategory != ""){
       $.ajax({
         type: 'GET',
-        url: 'get_size',
+        url: '/items/get_size',
         data: {grandchild_id: grandchildCategory},
         dataType: 'json'
       })
