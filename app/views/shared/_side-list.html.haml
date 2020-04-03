@@ -80,7 +80,7 @@
           発送元・お届け先住所変更
           %i.fa.fa-chevron-right
       %li.list-links__link
-        = link_to cards_path do
+        = link_to conform_card_path(current_user.id) do
           支払い方法
           %i.fa.fa-chevron-right
       %li.list-links__link
@@ -88,7 +88,7 @@
           メール/パスワード
           %i.fa.fa-chevron-right
       %li.list-links__link
-        = link_to "" do
+        = link_to conform_user_path(current_user.id) do
           本人情報
           %i.fa.fa-chevron-right
       %li.list-links__link
