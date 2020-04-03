@@ -21,17 +21,17 @@
             %label
               お名前
             %p
-              川田 晟矢
+              = "#{@current_user.first_name} #{@current_user.last_name}"
           .form-group
             %label
               お名前カナ
             %p
-              カワタ セイヤ
+              = "#{@current_user.first_name_kana} #{@current_user.last_name_kana}"
           .form-group
             %label
               生年月日
             %p
-              1993/12/19 
+              = @current_user.birthday
           .form-group
             %label(for="zip_code")
               郵便番号

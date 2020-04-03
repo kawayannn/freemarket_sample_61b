@@ -79,7 +79,7 @@
           = link_to "", class:"contents__bottom-signs-ok" do
             %i.fa.fa-check
             %span やることリスト
-          = link_to "", class:"contents__bottom-signs-ok" do
+          = link_to mypage_path(current_user.id), class:"contents__bottom-signs-ok" do
             = image_tag "apple.png"
             %span マイページ
           = link_to "ログアウト", destroy_user_session_path, method: :delete

@@ -6,8 +6,6 @@
       .images
         = image_tag @item.images.first.src.url, class: "images__main"
         %p.images__smn{id: 'thumbs'}
-          - @item.images.each do |image|
-            = image_tag image.src.url, class: "images__smn-sub"
       %table.show-table
         %tr.show-table__user
           %th 

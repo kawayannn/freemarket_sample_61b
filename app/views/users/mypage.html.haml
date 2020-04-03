@@ -7,7 +7,8 @@
       .contents-header__image
         = link_to do
           = image_tag "apple.png"
-          %p testuser
+          %p
+            = current_user.nickname
           %span
             評価
             %span 100
