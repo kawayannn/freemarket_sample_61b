@@ -18,7 +18,7 @@
           いいね！一覧
           %i.fa.fa-chevron-right
       %li.list-links__link
-        = link_to "" do
+        = link_to new_item_path do
           出品する
           %i.fa.fa-chevron-right
       %li.list-links__link
@@ -72,7 +72,7 @@
   .side-list__bottom
     %ul.list-links
       %li.list-links__link
-        = link_to "" do
+        = link_to edit_profile_path(current_user.id) do
           プロフィール
           %i.fa.fa-chevron-right
       %li.list-links__link
