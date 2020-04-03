@@ -4,5 +4,4 @@
   = render "shared/side-list"
   .single-inner
     .logout
-      = link_to "" do
-        ログアウト
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
