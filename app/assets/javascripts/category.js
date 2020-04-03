@@ -29,7 +29,6 @@ $(document).on('turbolinks:load', function(){
 
     $('#parent_category').on('change', function(){
       var parentCategory = document.getElementById('parent_category').value;
-      console.log(parentCategory)
       if (parentCategory != ""){
         $('#size').remove();
         $('#child_category').remove();
@@ -60,7 +59,6 @@ $(document).on('turbolinks:load', function(){
     });
     $(document).on("change", "#child_category", function() {
       var childId = $('#child_category option:selected').val();
-      console.log(childId)
       if (childId != ""){
         $.ajax({
           url: '/items/get_category_grandchildren',
