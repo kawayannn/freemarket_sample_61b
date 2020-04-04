@@ -34,11 +34,12 @@
   width: 160px;
   height: 160px;
   background-color: red;
-  padding: 30px 38px;
+  padding: 30px 40px;
   border-radius: 100px;
+  z-index: 10px;
   position: fixed;
-  top: 900px;
-  left: 1200px;
+  top: 450px;
+  left: 1100px;
   &__text{
     color: white;
     font-size: 22px;
