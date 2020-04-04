@@ -21,10 +21,11 @@
         - Item.where(category_id: category.subtree).each do |item|
           .prodacuts__cards
             .prodacuts__cards-item
-              .prodacuts__cards-content
-                = image_tag item.images.first.src.url
-              .prodacuts__cards-name
-                = item.name
-              .prodacuts__card-price
-                = "#{item.price}円"
+              = link_to item_path(item.id) do
+                .prodacuts__cards-content
+                  = image_tag item.images.first.src.url
+                .prodacuts__cards-name
+                  = item.name
+                .prodacuts__card-price
+                  = "#{item.price}円"
 = render "shared/footer"
