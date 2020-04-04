@@ -1,3 +1,4 @@
+= render "shared/header"
 .main-contents
   = render "shared/side-list"
   - if current_user.has_card?
@@ -24,3 +25,4 @@
             = icon('fas', 'angle-right')
   - else
     = render 'card-add'  
+= render "shared/footer"

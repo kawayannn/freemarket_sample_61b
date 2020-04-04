@@ -1,3 +1,4 @@
+= render "shared/header"
 .new_container
  = form_for @item do |f|  
   %main.new_main
@@ -103,3 +104,4 @@
   .new-main__content.new-main__btn-box
    = f.submit "変更する", class: "new-main__button-exhibition"
    .new-main__button-return もどる
+= render "shared/footer"
