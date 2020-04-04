@@ -20,7 +20,7 @@
         - Item.where(category_id: category.subtree).each do |item|
           .prodacuts__cards
             .prodacuts__cards-item
-              = link_to item_path(item) do
+              = link_to item_path(item.id) do
                 .prodacuts__cards-content
                   = image_tag item.images.first.src.url
                 .prodacuts__cards-name
