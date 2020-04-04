@@ -96,6 +96,6 @@
           電話番号の確認
           %i.fa.fa-chevron-right
       %li.list-links__link
-        = link_to logout_path do
+        = link_to logout_path(current_user.id) do
           ログアウト
           %i.fa.fa-chevron-right

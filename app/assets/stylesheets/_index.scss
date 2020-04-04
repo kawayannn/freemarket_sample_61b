@@ -30,6 +30,25 @@
   padding: 42px 210px 100px;
 }
 
+.icon{
+  width: 160px;
+  height: 160px;
+  background-color: red;
+  padding: 30px 40px;
+  border-radius: 100px;
+  z-index: 10px;
+  position: fixed;
+  top: 450px;
+  left: 1100px;
+  &__text{
+    color: white;
+    font-size: 22px;
+    padding-left: 18px;
+  }
+  &__new{
+  }
+}
+
 .prodacuts{
   &__category{
     margin-bottom: 16px;
