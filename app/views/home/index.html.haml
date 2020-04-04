@@ -21,12 +21,12 @@
           .prodacuts__cards
             .prodacuts__cards-item
               = link_to item_path(item) do
-              .prodacuts__cards-content
-                = image_tag item.images.first.src.url
-              .prodacuts__cards-name
-                = item.name
-              .prodacuts__card-price
-                = "#{item.price}円"
+                .prodacuts__cards-content
+                  = image_tag item.images.first.src.url
+                .prodacuts__cards-name
+                  = item.name
+                .prodacuts__card-price
+                  = "#{item.price}円"
 .icon
   = link_to "items/new" do
     .icon__text 出品
