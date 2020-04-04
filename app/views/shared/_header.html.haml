@@ -2,7 +2,7 @@
   .contents
     .contents__top
       .contents__top-logo
-        = link_to "" do
+        = link_to "/" do
           = image_tag "logo.png"
       %form
         %input{:name => "NAME", :placeholder => "何かお探しですか？", :type => "text"}/
@@ -79,10 +79,9 @@
           = link_to "", class:"contents__bottom-signs-ok" do
             %i.fa.fa-check
             %span やることリスト
-          = link_to "", class:"contents__bottom-signs-ok" do
+          = link_to mypage_path(current_user.id), class:"contents__bottom-signs-ok" do
             = image_tag "apple.png"
             %span マイページ
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
         - else
           = link_to "新規会員登録", registration_selection_path, class:"contents__bottom-signs-up"
           = link_to "ログイン", new_user_session_path, class:"contents__bottom-signs-in"

@@ -1,5 +1,6 @@
-- breadcrumb :conform_card
-= breadcrumbs pretext: "",separator: " &rsaquo; "
+.breadcrumbs-wrapper
+  - breadcrumb :conform_card
+  = breadcrumbs pretext: "",separator: " &rsaquo; "
 .main-contents
   = render "shared/side-list"
   = render "cards/card-add"

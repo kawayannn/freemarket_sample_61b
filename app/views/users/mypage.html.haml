@@ -1,5 +1,7 @@
-- breadcrumb :mypage
-= breadcrumbs pretext: "",separator: " &rsaquo; "
+.breadcrumbs-wrapper
+  .breadcrumbs_links
+    - breadcrumb :mypage
+    = breadcrumbs pretext: "",separator: " &rsaquo; "
 .main-contents
   = render "shared/side-list"
   .single-inner
@@ -7,7 +9,8 @@
       .contents-header__image
         = link_to do
           = image_tag "apple.png"
-          %p testuser
+          %p
+            = current_user.nickname
           %span
             評価
             %span 100

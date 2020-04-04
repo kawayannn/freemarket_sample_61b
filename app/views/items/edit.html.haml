@@ -44,7 +44,11 @@
      カテゴリー
      .new-main__form-require 必須
    #categories-select-box
-    = select :category_1,:category_1, options_from_collection_for_select(@categories, :id, :name),{prompt: "選択してください"}, {class: 'new-main__select__product--categories', id: "parent_category"}
+    = f.collection_select :category_id,Category.roots, :id,:name,{prompt: "選択してください",selected: @item.category.root.id}, {class: 'new-main__select__product--categories', id: "parent_category"}
+    = f.collection_select :category_id,@item.category.parent.siblings, :id,:name,{prompt: "選択してください",selected: @item.category.parent.id}, {class: 'listing-select-wrapper__box--select new-main__select__product--categories', id: "child_category"}
+    = f.collection_select :category_id,@item.category.siblings, :id,:name,{prompt: "選択してください",selected: @item.category.id}, {class: 'listing-select-wrapper__box--select new-main__select__product--categories', id: "grandchild_category"}
+    - if @item.size
+     = f.collection_select :size_id,@item.size.siblings, :id,:name,{prompt: "選択してください",selected: @item.size.id}, {class: 'listing-select-wrapper__box--select new-main__select__product--categories', id: "size"}
    .new-main__from-group
     .entry
      ブランド

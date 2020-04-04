@@ -1,0 +1,22 @@
+.breadcrumbs-wrapper{
+  border-top: 0.1px solid #EEEEEE;
+  background-color: white;
+	bottom: 0;
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+  }
+  span {
+    font-size: 14px;
+  }
+}
+
+.breadcrumbs{
+  border-top: 0.1px solid #EEEEEE;
+  width: 70%;
+  height: 50px;
+  margin: 0 auto;
+  background-color: white;
+  padding-top: 20px;
+}

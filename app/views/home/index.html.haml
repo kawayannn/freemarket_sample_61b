@@ -13,6 +13,7 @@
       - @categories.each do |category|
         %h2 
           #{category.name}新着アイテム
+        %br/
         = link_to "" do
           もっと見る
           %i.fa.fa-chevron-righ
@@ -25,7 +26,6 @@
                 = item.name
               .prodacuts__card-price
                 = "#{item.price}円"
-
 .icon
   = link_to "items/new" do
     .icon__text 出品
